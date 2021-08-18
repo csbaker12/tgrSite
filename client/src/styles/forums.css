@@ -1,0 +1,32 @@
+.forumswrapper {
+  margin: 1% 2%;
+}
+
+.align {
+  display: flex;
+  justify-items: flex-start;
+}
+
+.forum {
+  border: solid 1px lightgray;
+  margin-bottom: 2%;
+}
+
+.forumlabel {
+  background-color: black;
+  color: white;
+  margin-bottom: 0%;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+.forumdescription {
+  background-color: lightgray;
+  color: grey;
+  font-size: 120%;
+}
+
+.forumentry {
+  border-bottom: solid 1px lightgray;
+  margin-top: 1%;
+}

@@ -1,0 +1,77 @@
+.tourtop {
+  background-image: url('../images/concert.jpg');
+  background-size: 100%;
+  background-position-y: 10%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  margin-bottom: 2%;
+}
+
+.tourtopcontent {
+  color: white;
+  text-align: center;
+}
+
+.tourtoptitle {
+  font-size: 600%;
+  font-weight: bold;
+}
+
+.tourtopsub {
+  font-size: 300%;
+}
+
+.tourswrapper {
+  padding: 2% 10%;
+}
+
+.toursearchform {
+  padding-top: 1%;
+  display: flex;
+  justify-content: center;
+}
+
+.toursearchinput {
+  width: 40%;
+  font-size: 200%;
+}
+
+.toursearchbtn {
+  background-color: red;
+  color: white;
+  font-size: 200%;
+}
+
+.filmdetailsbtn {
+  background-color: red;
+  color: white;
+  font-size: 150%;
+}
+
+.skifilmimage {
+  background-image: url('../images/bridger.jpg');
+  background-size: 100%;
+  background-position-y: 10%;
+  padding-top: 50%;
+  margin-bottom: 2%;
+}
+
+.skifilmimglabel {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0;
+}
+
+.showingcard {
+  background-color: rgb(219, 219, 219);
+  color: black;
+  padding-bottom: 0%;
+  padding-top: 1%;
+  width: 70%;
+  margin-top: 2%;
+}
+
+.tourday {
+  font-size: 200%;
+  font-weight: bold;
+}

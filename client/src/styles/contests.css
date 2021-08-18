@@ -1,0 +1,53 @@
+.conteststop {
+  background-image: url('../images/fishin.JPG');
+  background-size: 100%;
+  background-position-y: 10%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  margin-bottom: 2%;
+}
+
+.contesttopcontent {
+  color: white;
+  text-align: center;
+}
+
+.contesttoptitle {
+  font-size: 600%;
+  font-weight: bold;
+}
+
+.contesttopsub {
+  font-size: 300%;
+}
+
+.contest {
+  text-align: center;
+  margin: 5% 15%;
+}
+
+.fishcontestimg {
+  background-image: url('../images/bow.JPG');
+  background-size: 100%;
+  background-position-y: 45%;
+  padding-top: 55%;
+  margin-bottom: 2%;
+}
+
+.contestbutton {
+  background-color: red;
+  color: white;
+}
+
+.contest {
+  text-align: center;
+  margin: 5% 15%;
+}
+
+.skiingcontestimg {
+  background-image: url('../images/pow.PNG');
+  background-size: 100%;
+  background-position-y: 50%;
+  padding-top: 55%;
+  margin-bottom: 2%;
+}

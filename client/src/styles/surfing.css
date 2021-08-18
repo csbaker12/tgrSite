@@ -1,0 +1,28 @@
+.surfingwrapper {
+  margin: 2% 15%;
+}
+
+.surfing1 {
+  background-image: url('../images/ocean.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 50%;
+  margin-bottom: 5%;
+}
+
+.surfingtext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.surfingtitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.surfingalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

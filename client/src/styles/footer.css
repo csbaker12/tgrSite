@@ -1,0 +1,25 @@
+.footerwrapper {
+  background-color: black;
+  color: white;
+  padding: 1% 5%;
+  text-align: center;
+}
+
+.footerli {
+  list-style: none;
+}
+
+.footerbottom {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.footercol {
+  border-right: solid white;
+}
+
+.footersend {
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,34 @@
+.bikingwrapper {
+  margin: 2% 15%;
+}
+
+.biking1 {
+  background-image: url('../images/bradybiking.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  margin-bottom: 5%;
+}
+
+.biking2 {
+  background-image: url('../images/theboys.jpg');
+  background-size: cover;
+  padding-top: 50%;
+  margin-bottom: 5%;
+}
+
+.bikingtext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.bikingtitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.bikingalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

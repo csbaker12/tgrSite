@@ -1,0 +1,28 @@
+.culturewrapper {
+  margin: 2% 15%;
+}
+
+.culture1 {
+  background-image: url('../images/concert.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 50%;
+  margin-bottom: 5%;
+}
+
+.culturetext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.culturetitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.culturealignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

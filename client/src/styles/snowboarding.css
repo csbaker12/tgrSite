@@ -1,0 +1,36 @@
+.snowboardingwrapper {
+  margin: 2% 15%;
+}
+
+.snowboarding1 {
+  background-image: url('../images/tbettyskin.jpg');
+  background-size: cover;
+  padding-top: 50%;
+  background-position-y: 90%;
+  margin-bottom: 5%;
+}
+
+.snowboarding2 {
+  background-image: url('../images/tbettynoshirt.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 60%;
+  margin-bottom: 5%;
+}
+
+.snowboardingtext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.snowboardingtitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.snowboardingalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

@@ -1,0 +1,35 @@
+.newswrapper {
+  margin: 2% 15%;
+}
+
+.news1 {
+  background-image: url('../images/smoke.JPG');
+  background-size: cover;
+  padding-top: 50%;
+  margin-bottom: 5%;
+}
+
+.news2 {
+  background-image: url('../images/mensmoke.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 60%;
+  margin-bottom: 5%;
+}
+
+.newstext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.newstitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.newsalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

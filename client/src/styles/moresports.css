@@ -1,0 +1,44 @@
+.moresportswrapper {
+  margin: 2% 15%;
+}
+
+.moresports1 {
+  background-image: url('../images/slotcanyon.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 50%;
+  margin-bottom: 5%;
+}
+
+.moresports2 {
+  background-image: url('../images/bendclimb.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 80%;
+  margin-bottom: 5%;
+}
+
+.moresports3 {
+  background-image: url('../images/madison.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 40%;
+  margin-bottom: 5%;
+}
+
+.moresportstext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.moresportstitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.moresportsalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

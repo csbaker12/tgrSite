@@ -1,0 +1,36 @@
+.gearwrapper {
+  margin: 2% 15%;
+}
+
+.gear1 {
+  background-image: url('../images/skis.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 90%;
+  margin-bottom: 5%;
+}
+
+.gear2 {
+  background-image: url('../images/flyrod.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 60%;
+  margin-bottom: 5%;
+}
+
+.geartext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.geartitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.gearalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

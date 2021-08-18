@@ -1,0 +1,132 @@
+.joinformwrapper {
+  background-image: url('../images/tetons.JPG');
+  background-size: 100%;
+  background-position-y: 60%;
+  padding-top: 5%;
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+}
+
+.joincontent {
+  color: white;
+}
+
+.joinheader {
+  font-size: 600%;
+  font-weight: 700;
+  text-align: center;
+}
+
+.joinformsubmit {
+  color: white;
+  background-color: rgb(12, 216, 243);
+  font-size: 60%;
+  padding: 1% 4%;
+}
+
+.joinform {
+  font-size: 300%;
+  display: flex;
+  justify-content: center;
+}
+
+.joinsignin {
+  font-size: 150%;
+  text-align: right;
+  margin-right: 32%;
+}
+
+.joinbenefitsheader {
+  font-size: 200%;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.joincontheader {
+  font-size: 200%;
+  text-align: center;
+}
+
+.joincontformat {
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: center;
+}
+
+.joingetfamouswrapper {
+  background-image: url('../images/cananaskis.jpg');
+  background-size: 100%;
+  background-position-y: 30%;
+  padding-top: 15%;
+  padding-bottom: 5%;
+  margin-bottom: 2%;
+}
+
+.joingetfamouscontent {
+  color: white;
+  width: 30%;
+  padding-left: 2%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.joingetfamouscontentheader {
+  color: white;
+}
+
+.joingetstartedwrapper {
+  background-image: url('../images/wideviewme.jpg');
+  background-size: 100%;
+  background-position-y: 40%;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.joingetstartedcont {
+  color: white;
+  text-align: center;
+  width: 40%;
+  margin-left: 30%;
+  margin-bottom: 2%;
+}
+
+.joingetstartedheader {
+  color: white;
+  text-align: center;
+  font-size: 500%;
+  font-weight: 500;
+  margin-bottom: 5%;
+}
+
+.joingetstartedcont2 {
+  color: white;
+  margin-top: 1%;
+}
+
+.joinsignin:hover {
+  cursor: pointer;
+}
+
+.signincard {
+  background-color: white;
+  width: 25%;
+  margin-left: 35%;
+  margin-top: 10%;
+  padding: 2%;
+  height: 40%;
+}
+
+.signinform {
+  font-size: 300%;
+}
+
+.signinformsubmit {
+  color: white;
+  background-color: rgb(12, 216, 243);
+  width: 100%;
+  margin-top: 10%;
+}
+
+.signinheader {
+  color: grey;
+}

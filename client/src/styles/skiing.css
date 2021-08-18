@@ -1,0 +1,44 @@
+.skiingwrapper {
+  margin: 2% 15%;
+}
+
+.skiing1 {
+  background-image: url('../images/gettingsprayed.JPG');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 90%;
+  margin-bottom: 5%;
+}
+
+.skiing2 {
+  background-image: url('../images/mecheesin.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 60%;
+  margin-bottom: 5%;
+}
+
+.skiing3 {
+  background-image: url('../images/bridgerpow.JPG');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 100%;
+  margin-bottom: 5%;
+}
+
+.skiingtext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.skiingtitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.skiingalignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

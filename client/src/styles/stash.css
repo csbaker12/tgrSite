@@ -1,0 +1,101 @@
+.stashheader {
+  margin: 0% 10%;
+  font-size: 120%;
+}
+
+.stashhomelabel {
+  font-size: 120%;
+}
+
+.featuredpick {
+  background-image: url('../images/baker.jpg');
+  background-size: 100%;
+  background-position-y: 10%;
+  padding-top: 4%;
+  margin-bottom: 2%;
+}
+
+.featuredpickcontent {
+  color: white;
+  text-align: center;
+  margin-top: 30%;
+  padding-bottom: 2%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.featuredtitle {
+  font-size: 300%;
+}
+
+.featuredphoto {
+  background-image: url('../images/titcomb.JPG');
+  background-size: 100%;
+  background-position-y: 45%;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.featuredphototitle {
+  font-size: 200%;
+  margin-bottom: 0;
+}
+
+.featuredphototext {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.featuredtrip {
+  background-image: url('../images/cracker.jpeg');
+  background-size: 100%;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.popularvideoback {
+  background-image: url('../images/browntrout.jpg');
+  background-size: 100%;
+  background-position-y: 65%;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.popularvideoback2 {
+  background-image: url('../images/touring.JPG');
+  background-size: 100%;
+  background-position-y: 65%;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.popularstoryback {
+  background-image: url('../images/camp.jpg');
+  background-size: 100%;
+  background-position-y: 65%;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.popularstoryback2 {
+  background-image: url('../images/climbing.jpg');
+  background-size: 100%;
+  background-position-y: 65%;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.align {
+  display: flex;
+  justify-items: flex-start;
+}

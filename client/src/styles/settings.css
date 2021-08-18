@@ -1,0 +1,32 @@
+.settingswrapper {
+  width: 15%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 85%;
+  margin-top: 1%;
+  font-size: 150%;
+}
+
+.settingscontent {
+  text-align: right;
+  padding-right: 10%;
+  padding-top: 10%;
+  padding-left: 10%;
+}
+
+.settingsdivider {
+  border-top: 1px solid white;
+  width: 100%;
+}
+
+.settingsitem {
+  color: white;
+  font-size: 90%;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.settingsitem:hover {
+  color: red;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+.adventurewrapper {
+  margin: 2% 15%;
+}
+
+.adventure1 {
+  background-image: url('../images/river.JPG');
+  background-size: cover;
+  padding-top: 50%;
+  margin-bottom: 5%;
+}
+
+.adventure2 {
+  background-image: url('../images/cave.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 60%;
+  margin-bottom: 5%;
+}
+
+.adventure3 {
+  background-image: url('../images/bakerday.jpg');
+  background-size: 100%;
+  padding-top: 50%;
+  background-position-y: 100%;
+  margin-bottom: 5%;
+}
+
+.adventuretext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.adventuretitle {
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.adventurealignmediabar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 9%;
+}

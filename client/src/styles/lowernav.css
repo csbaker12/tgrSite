@@ -1,0 +1,25 @@
+.navbar2 {
+  /* border-bottom: 5px solid #dbdbdb; */
+  background: white;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 140px;
+  text-align: center;
+}
+
+.lownavitem {
+  border-top: solid lightgray;
+  border-bottom: solid lightgray;
+  border-right: solid lightgray;
+  color: rgb(155, 155, 155);
+  padding-top: 0.5vw;
+  padding-bottom: 0.5vw;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 0%;
+  cursor: pointer;
+}
+
+.lownavitem1 {
+  border-left: solid lightgray;
+}

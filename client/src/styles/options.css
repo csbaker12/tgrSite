@@ -1,0 +1,37 @@
+.optionswrapper {
+  width: 75%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: 12%;
+  margin-top: 5%;
+  font-size: 150%;
+}
+
+.optionscarditem {
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.optionscardrow {
+  width: 90%;
+  padding-left: 10%;
+}
+
+.optionscardconfig {
+  padding-top: 5%;
+}
+
+.left {
+  border-bottom: solid white;
+  border-right: solid white;
+}
+
+.leftbottom {
+  border-right: solid white;
+}
+
+.right {
+  border-bottom: solid white;
+}

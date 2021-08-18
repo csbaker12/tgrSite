@@ -1,0 +1,78 @@
+.filmswrapper {
+  margin: 2% 15%;
+}
+
+.formformat {
+  width: 100%;
+}
+
+.movie1 {
+  background-image: url('../images/climbing.jpg');
+  background-size: 100%;
+  margin-bottom: 5%;
+  padding-top: 60%;
+}
+
+.movie2 {
+  background-image: url('../images/browntrout.jpg');
+  background-size: 100%;
+  background-position-y: 50%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movie3 {
+  background-image: url('../images/cananaskis.jpg');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movie4 {
+  background-image: url('../images/baker.jpg');
+  background-size: cover;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movie5 {
+  background-image: url('../images/cracker.jpeg');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movie6 {
+  background-image: url('../images/pow.PNG');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+  background-position-y: 50%;
+}
+
+.movie7 {
+  background-image: url('../images/bridger.jpg');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movie8 {
+  background-image: url('../images/touring.JPG');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movie9 {
+  background-image: url('../images/tetons.JPG');
+  background-size: cover;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.movietitle {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  padding-left: 5%;
+}

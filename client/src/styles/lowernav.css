@@ -1,24 +1,44 @@
 .navbar2 {
   /* border-bottom: 5px solid #dbdbdb; */
   background: white;
-  padding-left: 1vw;
-  padding-right: 1vw;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .lownavitem {
-  border-top: solid lightgray;
-  border-bottom: solid lightgray;
-  border-right: solid lightgray;
+  border: solid lightgray;
   color: rgb(155, 155, 155);
-  padding-top: 0.5vw;
-  padding-bottom: 0.5vw;
   font-size: 200%;
   font-weight: 700;
   margin-bottom: 0%;
   cursor: pointer;
+  width: 100%;
 }
 
-.lownavitem1 {
-  border-left: solid lightgray;
+.lownavlink {
+  text-decoration: none;
+  color: rgb(155, 155, 155);
+}
+.lownavlink:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.prime {
+  border-right: solid lightgray;
+}
+
+.lowernavlist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lowernavlistitem {
+  font-size: 200%;
+  color: grey;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
 }

@@ -49,12 +49,16 @@ const Footer = () => {
 
         <div className='row footerbottom'>
           <div className='col-4 footercol'>
-            <a href='/'>TETON GRAVITY RESEARCH</a> &copy; 2017 ALL RIGHTS
-            RESERVED.
+            <p>
+              <a href='/'>TETON GRAVITY RESEARCH</a> &copy; 2017 ALL RIGHTS
+              RESERVED.
+            </p>
           </div>
-          <div className='col-4 footercol'>TERMS OF USE & PRIVACY POLICY</div>
+          <div className='col-4 footercol'>
+            <p>TERMS OF USE & PRIVACY POLICY</p>
+          </div>
           <div className='col-4'>
-            PARTNER OF USATODAY LIFESTYLE/ACTION SPORTS
+            <p>PARTNER OF USATODAY LIFESTYLE/ACTION SPORTS</p>
           </div>
         </div>
       </div>

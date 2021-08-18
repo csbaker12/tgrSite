@@ -17,58 +17,71 @@ const LowerNav = () => {
   };
   return (
     <>
-      <div className='row navbar2'>
-        <p
-          className='col lownavitem1 lownavitem action'
-          onMouseOver={handleOpen}>
+      <div className=' navbar2'>
+        <p className=' lownavitem lownavitem action' onMouseOver={handleOpen}>
           Action <ArrowDropDownIcon style={{ fontSize: '30px' }} />
         </p>
-        <NavLink
-          to='/adventure'
-          className='col lownavitem adventure lownavlink'>
-          Adventure
-        </NavLink>
-        <NavLink to='/culture' className='col lownavitem culture lownavlink'>
-          Culture
-        </NavLink>
-        <NavLink to='/gear' className='col lownavitem gear lownavlink'>
-          Gear/Tech
-        </NavLink>
-        <NavLink to='/news' className='col lownavitem news lownavlink'>
-          News
-        </NavLink>
-        <NavLink to='/films' className='col lownavitem films lownavlink'>
-          Films
-        </NavLink>
-        <NavLink to='/shop' className='col lownavitem shop lownavlink'>
-          Shop
-        </NavLink>
+        <div className='lownavitem  adventure'>
+          <NavLink to='/adventure' className='lownavlink'>
+            Adventure
+          </NavLink>
+        </div>
+
+        <div className='lownavitem  culture'>
+          <NavLink to='/culture' className=' lownavlink'>
+            Culture
+          </NavLink>
+        </div>
+
+        <div className='lownavitem  gear'>
+          <NavLink to='/gear' className='  lownavlink'>
+            Gear/Tech
+          </NavLink>
+        </div>
+
+        <div className='lownavitem  news'>
+          <NavLink to='/news' className=' lownavlink'>
+            News
+          </NavLink>
+        </div>
+
+        <div className='lownavitem  films'>
+          <NavLink to='/films' className='lownavlink'>
+            Films
+          </NavLink>
+        </div>
+
+        <div className='lownavitem  shop'>
+          <NavLink to='/shop' className=' lownavlink'>
+            Shop
+          </NavLink>
+        </div>
       </div>
       {state ? (
-        <div className='row lowernavlist' onMouseLeave={handleClose}>
+        <div className=' lowernavlist' onMouseLeave={handleClose}>
           <NavLink
             to='/skiing'
-            className='lowernavlistitem lownavlink col-2 prime skiing'>
+            className='lowernavlistitem lownavlink  prime skiing'>
             Skiing
           </NavLink>
           <NavLink
             to='/snowboarding'
-            className='lowernavlistitem lownavlink col-2 prime boarding'>
+            className='lowernavlistitem lownavlink  prime boarding'>
             Snowboarding
           </NavLink>
           <NavLink
             to='/mtbiking'
-            className='lowernavlistitem lownavlink col-2 prime biking'>
+            className='lowernavlistitem lownavlink  prime biking'>
             Mountain Biking
           </NavLink>
           <NavLink
             to='/surfing'
-            className='lowernavlistitem lownavlink col-2 prime surfing'>
+            className='lowernavlistitem lownavlink  prime surfing'>
             Surfing
           </NavLink>
           <NavLink
             to='/moresports'
-            className='lowernavlistitem lownavlink col-2 prime more'>
+            className='lowernavlistitem lownavlink  prime more'>
             More Sports
           </NavLink>
         </div>

@@ -19,7 +19,7 @@ const Options = () => {
     <>
       <DehazeIcon
         onClick={() => handleOpen()}
-        style={{ fontSize: '90px', color: 'black' }}
+        style={{ fontSize: '400%', color: 'black' }}
         className='drawer_btn'
       />
       {state ? (

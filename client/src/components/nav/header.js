@@ -13,12 +13,12 @@ const Header = () => {
           <div className='col-3'>
             <Options />
           </div>
-          <div className='col-4'>
+          <div className='col-3'>
             <Link to='/' className='navbar-brand d-flex align-items-center'>
-              <img src={logo} alt='logo' width='250vw' />
+              <img src={logo} alt='logo' width='60%' />
             </Link>
           </div>
-          <div className='col-1'>
+          <div className='col-2'>
             <div className='row'>
               <div className='col-6'>
                 <Search />

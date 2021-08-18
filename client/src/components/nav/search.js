@@ -17,7 +17,7 @@ const Search = () => {
   return (
     <>
       <SearchIcon
-        style={{ fontSize: '70px', color: 'black' }}
+        style={{ fontSize: '400%', color: 'black' }}
         onClick={() => handleOpen()}
         className='drawer_btn'
       />

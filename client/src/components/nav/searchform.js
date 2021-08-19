@@ -8,7 +8,7 @@ const SearchForm = () => {
           <input
             type='text'
             placeholder='Search TetonGravity.com'
-            style={{ width: '500px', textAlign: 'center' }}
+            style={{ width: '50%', textAlign: 'center' }}
           />
           <button className='search_btn'>Search</button>
         </form>

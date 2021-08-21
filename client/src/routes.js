@@ -21,6 +21,13 @@ import Forums from './components/forums';
 import Contests from './components/contests';
 import Footer from './components/nav/footer';
 import Tours from './components/tours';
+import About from './components/footerroutes/about';
+import Contributors from './components/footerroutes/contributors';
+import Contact from './components/footerroutes/contact';
+import FAQ from './components/footerroutes/faq';
+import FilmDetails from './components/filmdetails';
+import ContestSignup from './components/contests/contestsignup';
+import Article from './components/article';
 const Routes = () => {
   return (
     <>
@@ -30,6 +37,9 @@ const Routes = () => {
 
         <Switch>
           {/* <Route path='/connect' component={Connect} /> */}
+          <Route path='/article' component={Article} />
+          <Route path='/contestsignup' component={ContestSignup} />
+          <Route path='/filmdetails' component={FilmDetails} />
           <Route path='/adventure' component={Adventure} />
           <Route path='/culture' component={Culture} />
           <Route path='/gear' component={Gear} />
@@ -47,6 +57,10 @@ const Routes = () => {
           <Route path='/forums' component={Forums} />
           <Route path='/contests' component={Contests} />
           <Route path='/tours' component={Tours} />
+          <Route path='/company' component={About} />
+          <Route path='/contributors' component={Contributors} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/faq' component={FAQ} />
 
           <Route path='/' component={Home} />
         </Switch>

@@ -2,6 +2,7 @@ import '../../styles/news.css';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
+import { Link as RouterLink } from 'react-router-dom';
 
 const News = () => {
   return (
@@ -12,24 +13,28 @@ const News = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <div className='news1'>
-                <div className='newstext'>
-                  <p>
-                    <span className='newstitle'>Wildfire Season Update</span>
-                    <br /> TGR | News | 934.2k
-                  </p>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='news1'>
+                  <div className='newstext'>
+                    <p>
+                      <span className='newstitle'>Wildfire Season Update</span>
+                      <br /> TGR | News | 934.2k
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className='news2'>
-                <div className='newstext'>
-                  <p>
-                    <span className='newstitle'>
-                      What Can We Do to Curb Wildfires?
-                    </span>
-                    <br /> cbakeski | News | 423.7k
-                  </p>
+              </RouterLink>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='news2'>
+                  <div className='newstext'>
+                    <p>
+                      <span className='newstitle'>
+                        What Can We Do to Curb Wildfires?
+                      </span>
+                      <br /> cbakeski | News | 423.7k
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
             <div className='col-4 newsalignmediabar'>
               <div>

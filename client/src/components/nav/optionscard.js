@@ -5,7 +5,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const OptionsCard = () => {
   return (
     <div className='optionscardconfig'>
-      <div class='row optionscardrow'>
+      <div className='row optionscardrow'>
         <RouterLink
           to='/adventure'
           className='col-3 optionscarditem left adventure'>

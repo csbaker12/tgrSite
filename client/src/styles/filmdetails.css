@@ -1,0 +1,16 @@
+.filmdetailsbg {
+  text-align: center;
+  background-image: url(../images/sunset.JPG);
+  background-size: 100%;
+  background-position-y: 20%;
+  padding-top: 25%;
+  padding-bottom: 5%;
+}
+
+.filmdetailstext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 300%;
+  margin-left: 20%;
+  margin-right: 20%;
+}

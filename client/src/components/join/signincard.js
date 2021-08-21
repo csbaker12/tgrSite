@@ -4,10 +4,11 @@ const SignInCard = () => {
   return (
     <>
       <h1 className='signinheader'>SIGN IN:</h1>
-      <form className='signinform'>
+      <form className='signinform' action='/'>
         <input
           type='text'
           placeholder='Enter your email'
+          name='email'
           style={{
             width: '100%',
             textAlign: 'center',
@@ -20,6 +21,7 @@ const SignInCard = () => {
         />
         <input
           type='password'
+          name='password'
           placeholder='Enter your password'
           style={{
             width: '100%',

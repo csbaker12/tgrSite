@@ -2,6 +2,7 @@ import '../../styles/snowboarding.css';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Snowboarding = () => {
   return (
@@ -12,26 +13,30 @@ const Snowboarding = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <div className='snowboarding1'>
-                <div className='snowboardingtext'>
-                  <p>
-                    <span className='snowboardingtitle'>
-                      Splitboarding Colorado
-                    </span>
-                    <br /> tbetty | Snowboarding | 412.4k
-                  </p>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='snowboarding1'>
+                  <div className='snowboardingtext'>
+                    <p>
+                      <span className='snowboardingtitle'>
+                        Splitboarding Colorado
+                      </span>
+                      <br /> tbetty | Snowboarding | 412.4k
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className='snowboarding2'>
-                <div className='snowboardingtext'>
-                  <p>
-                    <span className='snowboardingtitle'>
-                      Spring Snowboarding
-                    </span>
-                    <br /> tbetty | Snowboarding | 59.8k
-                  </p>
+              </RouterLink>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='snowboarding2'>
+                  <div className='snowboardingtext'>
+                    <p>
+                      <span className='snowboardingtitle'>
+                        Spring Snowboarding
+                      </span>
+                      <br /> tbetty | Snowboarding | 59.8k
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
             <div className='col-4 snowboardingalignmediabar'>
               <div>

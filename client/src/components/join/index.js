@@ -26,9 +26,10 @@ const Join = () => {
       <div className='joinformwrapper'>
         <div className='joincontent'>
           <p className='joinheader'>JOIN THE STASH</p>
-          <form className='joinform'>
+          <form className='joinform' action='/'>
             <input
               type='email'
+              name='email'
               placeholder='Enter your email'
               style={{
                 width: '30%',
@@ -48,7 +49,7 @@ const Join = () => {
             </p>
           </div>
           {state ? (
-            <Modal open={state} onClose={handleClose} onClick={handleClose}>
+            <Modal open={state} onClose={handleClose}>
               <div className='signincard'>
                 <SignInCard />
               </div>
@@ -155,9 +156,10 @@ const Join = () => {
           It's a snap to sign up - just enter your email below to get
           started.It's also <b>completely free!</b>
         </h2>
-        <form className='joinform'>
+        <form className='joinform' action='/'>
           <input
             type='email'
+            name='email'
             placeholder='Enter your email'
             style={{
               width: '30%',

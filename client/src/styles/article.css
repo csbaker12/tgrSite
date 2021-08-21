@@ -1,0 +1,16 @@
+.articlebg {
+  background-image: url('../images/slotcanyon.jpg');
+  background-size: 100%;
+  background-position-y: 60%;
+  padding-top: 15%;
+  padding-bottom: 25%;
+}
+
+.articletext {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  font-size: 300%;
+}

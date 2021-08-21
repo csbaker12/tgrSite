@@ -6,77 +6,75 @@
   width: 100%;
 }
 
-.movie1 {
-  background-image: url('../images/bridger.jpg');
+.contributor1 {
+  background-image: url('../images/birdy.jpg');
+  background-size: 100%;
+  margin-bottom: 5%;
+  padding-top: 60%;
+}
+
+.contributor2 {
+  background-image: url('../images/dave.jpg');
+  background-size: 100%;
+  background-position-y: 20%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.contributor3 {
+  background-image: url('../images/ders.jpg');
   background-size: 100%;
   padding-top: 60%;
   margin-bottom: 5%;
 }
 
-.movie2 {
-  background-image: url('../images/browntrout.jpg');
+.contributor4 {
+  background-image: url('../images/josh.jpg');
+  background-size: cover;
+  padding-top: 60%;
+  margin-bottom: 5%;
+  background-position-y: 40%;
+}
+
+.contributor5 {
+  background-image: url('../images/migs.jpg');
   background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+}
+
+.contributor6 {
+  background-image: url('../images/nate.JPG');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
   background-position-y: 50%;
-  padding-top: 60%;
-  margin-bottom: 5%;
 }
 
-.movie3 {
-  background-image: url('../images/cananaskis.jpg');
+.contributor7 {
+  background-image: url('../images/scott.jpg');
   background-size: 100%;
   padding-top: 60%;
   margin-bottom: 5%;
 }
 
-.movie4 {
-  background-image: url('../images/baker.jpg');
+.contributor8 {
+  background-image: url('../images/jake.jpg');
+  background-size: 100%;
+  padding-top: 60%;
+  margin-bottom: 5%;
+  background-position-y: 90%;
+}
+
+.contributor9 {
+  background-image: url('../images/evan.jpg');
   background-size: cover;
   padding-top: 60%;
   margin-bottom: 5%;
 }
 
-.movie5 {
-  background-image: url('../images/cracker.jpeg');
-  background-size: 100%;
-  padding-top: 60%;
-  margin-bottom: 5%;
-}
-
-.movie6 {
-  background-image: url('../images/pow.PNG');
-  background-size: 100%;
-  padding-top: 60%;
-  margin-bottom: 5%;
-  background-position-y: 50%;
-}
-
-.movie7 {
-  background-image: url('../images/climbing.jpg');
-  background-size: 100%;
-  margin-bottom: 5%;
-  padding-top: 60%;
-}
-
-.movie8 {
-  background-image: url('../images/touring.JPG');
-  background-size: 100%;
-  padding-top: 60%;
-  margin-bottom: 5%;
-}
-
-.movie9 {
-  background-image: url('../images/tetons.JPG');
-  background-size: cover;
-  padding-top: 60%;
-  margin-bottom: 5%;
-}
-
-.movietitle {
+.contributortitle {
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
   padding-left: 5%;
-}
-
-.filmrouterlink {
-  text-decoration: none;
 }

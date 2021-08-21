@@ -75,3 +75,21 @@
   font-size: 200%;
   font-weight: bold;
 }
+
+.tourmodalwrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 9%15%;
+  padding-bottom: 5%;
+  padding-top: 5%;
+}
+
+.buybtn:hover {
+  cursor: pointer;
+}
+
+.tourmodaltitle {
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+}

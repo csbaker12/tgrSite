@@ -1,6 +1,20 @@
 import '../../styles/tours.css';
+import { useState } from 'react';
+import { Modal } from '@material-ui/core';
+import TourModal from './tourmodal';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Tours = () => {
+  const [buy, setBuy] = useState(false);
+
+  const handleOpen = () => {
+    setBuy(true);
+  };
+
+  const handleClose = () => {
+    setBuy(false);
+  };
+
   return (
     <>
       <div className='tourtop'>
@@ -28,15 +42,17 @@ const Tours = () => {
             <div className='col-3 center'>
               <div className='skifilmimage'>
                 <div className='skifilmimglabel'>
-                  <h5 style={{ color: 'white' }}>BBOWL SLIDIN</h5>
+                  <h5 style={{ color: 'white' }}>Treasure State</h5>
                   <p>SKI FILM | 2021</p>
                 </div>
               </div>
               <p>
-                More shows are being added daily! Want to bring Stoke the Fire
-                to your town? Fill out our licensing request form now.
+                Nothing but Montana coldsmoke and good times. Buckle up and
+                enjoy the ride
               </p>
-              <button className='filmdetailsbtn'>Film Details</button>
+              <RouterLink to='/filmdetails'>
+                <button className='filmdetailsbtn'>Film Details</button>
+              </RouterLink>
             </div>
             <div className='col-9'>
               <h3>Upcoming BBowl Slidin Shows</h3>
@@ -64,7 +80,7 @@ const Tours = () => {
                       Cam's House
                     </p>
                   </div>
-                  <div className='col-2'>
+                  <div className='col-2 buybtn' onClick={() => handleOpen()}>
                     <p>
                       <b>BUY</b>
                     </p>
@@ -95,7 +111,7 @@ const Tours = () => {
                       The Park
                     </p>
                   </div>
-                  <div className='col-2'>
+                  <div className='col-2 buybtn' onClick={() => handleOpen()}>
                     <p>
                       <b>BUY</b>
                     </p>
@@ -106,6 +122,13 @@ const Tours = () => {
           </div>
         </div>
       </div>
+      {buy ? (
+        <Modal open={buy} onClose={handleClose}>
+          <div className='tourmodalwrapper'>
+            <TourModal />
+          </div>
+        </Modal>
+      ) : null}
     </>
   );
 };

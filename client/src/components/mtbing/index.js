@@ -2,6 +2,7 @@ import '../../styles/biking.css';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
+import { Link as RouterLink } from 'react-router-dom';
 
 const MTBing = () => {
   return (
@@ -12,22 +13,26 @@ const MTBing = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <div className='biking1'>
-                <div className='bikingtext'>
-                  <p>
-                    <span className='bikingtitle'>Exploring Trestle</span>
-                    <br /> bpski | Biking | 135.2k
-                  </p>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='biking1'>
+                  <div className='bikingtext'>
+                    <p>
+                      <span className='bikingtitle'>Exploring Trestle</span>
+                      <br /> bpski | Biking | 135.2k
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className='biking2'>
-                <div className='bikingtext'>
-                  <p>
-                    <span className='bikingtitle'>Biking Colorado</span>
-                    <br /> camsmonth | Biking | 6.5k
-                  </p>
+              </RouterLink>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='biking2'>
+                  <div className='bikingtext'>
+                    <p>
+                      <span className='bikingtitle'>Biking Colorado</span>
+                      <br /> camsmonth | Biking | 6.5k
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
             <div className='col-4 bikingalignmediabar'>
               <div>

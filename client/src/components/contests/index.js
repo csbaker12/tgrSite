@@ -1,5 +1,6 @@
 import StarIcon from '@material-ui/icons/Star';
 import '../../styles/contests.css';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Contests = () => {
   return (
@@ -27,7 +28,9 @@ const Contests = () => {
               will get the opportunity to travel to New Zealand with our crew
               and film for our upcoming film <b>Poetry in Motion</b>
             </p>
-            <button className='contestbutton'>Enter Now</button>
+            <RouterLink to='/contestsignup'>
+              <button className='contestbutton'>Enter Now</button>
+            </RouterLink>
           </div>
         </div>
       </div>

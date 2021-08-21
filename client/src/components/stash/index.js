@@ -3,6 +3,8 @@ import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
 import FilterHdrIcon from '@material-ui/icons/FilterHdr';
+import { Link as RouterLink } from 'react-router-dom';
+
 const Stash = () => {
   return (
     <div className='stashheader'>
@@ -20,14 +22,16 @@ const Stash = () => {
             <p className='stashhomelabel'>
               <b>FEATURED TGR PICK</b>
             </p>
-            <div className='featuredpick'>
-              <div className='featuredpickcontent'>
-                <p className='featuredtitle'>
-                  <b>Mega Road Trip</b>
-                </p>
-                <p>cbakeski | ADVENTURE | 10k views</p>
+            <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <div className='featuredpick'>
+                <div className='featuredpickcontent'>
+                  <p className='featuredtitle'>
+                    <b>Mega Road Trip</b>
+                  </p>
+                  <p>cbakeski | ADVENTURE | 10k views</p>
+                </div>
               </div>
-            </div>
+            </RouterLink>
             <div className='row'>
               <div className='col-6'>
                 <hr />
@@ -35,15 +39,16 @@ const Stash = () => {
                   <b>FEATURED PHOTO</b>
                 </p>
                 <hr />
-
-                <div className='featuredphoto'>
-                  <div className='featuredphototext'>
-                    <p className='featuredphototitle'>
-                      <b>Titcomb Basin</b>
-                    </p>
-                    <p>TGR | ADVENTURE | 5.2k</p>
+                <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                  <div className='featuredphoto'>
+                    <div className='featuredphototext'>
+                      <p className='featuredphototitle'>
+                        <b>Titcomb Basin</b>
+                      </p>
+                      <p>TGR | ADVENTURE | 5.2k</p>
+                    </div>
                   </div>
-                </div>
+                </RouterLink>
               </div>
               <div className='col-6'>
                 <hr />
@@ -51,15 +56,16 @@ const Stash = () => {
                   <b>FEATURED TRIP REPORT</b>
                 </p>
                 <hr />
-
-                <div className='featuredtrip'>
-                  <div className='featuredphototext'>
-                    <p className='featuredphototitle'>
-                      <b>GNP</b>
-                    </p>
-                    <p>urboibob | ADVENTURE | 17.6k</p>
+                <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                  <div className='featuredtrip'>
+                    <div className='featuredphototext'>
+                      <p className='featuredphototitle'>
+                        <b>GNP</b>
+                      </p>
+                      <p>urboibob | ADVENTURE | 17.6k</p>
+                    </div>
                   </div>
-                </div>
+                </RouterLink>
               </div>
               <div>
                 <hr />
@@ -69,24 +75,32 @@ const Stash = () => {
                 <hr />
                 <div className='row'>
                   <div className='col-6'>
-                    <div className='popularvideoback'>
-                      <div className='featuredphototext'>
-                        <p className='featuredphototitle'>
-                          <b>Chasing Hogs</b>
-                        </p>
-                        <p>cbakeski | MORE SPORTS | 22.1k</p>
+                    <RouterLink
+                      to='/article'
+                      style={{ textDecoration: 'none' }}>
+                      <div className='popularvideoback'>
+                        <div className='featuredphototext'>
+                          <p className='featuredphototitle'>
+                            <b>Chasing Hogs</b>
+                          </p>
+                          <p>cbakeski | MORE SPORTS | 22.1k</p>
+                        </div>
                       </div>
-                    </div>
+                    </RouterLink>
                   </div>
                   <div className='col-6'>
-                    <div className='popularvideoback2'>
-                      <div className='featuredphototext'>
-                        <p className='featuredphototitle'>
-                          <b>Powder Seeker</b>
-                        </p>
-                        <p>bigmig | SKI | 76.1k</p>
+                    <RouterLink
+                      to='/article'
+                      style={{ textDecoration: 'none' }}>
+                      <div className='popularvideoback2'>
+                        <div className='featuredphototext'>
+                          <p className='featuredphototitle'>
+                            <b>Powder Seeker</b>
+                          </p>
+                          <p>bigmig | SKI | 76.1k</p>
+                        </div>
                       </div>
-                    </div>
+                    </RouterLink>
                   </div>
                 </div>
               </div>
@@ -98,24 +112,32 @@ const Stash = () => {
                 <hr />
                 <div className='row'>
                   <div className='col-6'>
-                    <div className='popularstoryback'>
-                      <div className='featuredphototext'>
-                        <p className='featuredphototitle'>
-                          <b>High Elevation Camping</b>
-                        </p>
-                        <p>bpski | ADVENTURE | 4.4k</p>
+                    <RouterLink
+                      to='/article'
+                      style={{ textDecoration: 'none' }}>
+                      <div className='popularstoryback'>
+                        <div className='featuredphototext'>
+                          <p className='featuredphototitle'>
+                            <b>High Elevation Camping</b>
+                          </p>
+                          <p>bpski | ADVENTURE | 4.4k</p>
+                        </div>
                       </div>
-                    </div>
+                    </RouterLink>
                   </div>
                   <div className='col-6'>
-                    <div className='popularstoryback2'>
-                      <div className='featuredphototext'>
-                        <p className='featuredphototitle'>
-                          <b>Choss God</b>
-                        </p>
-                        <p>Nurt | MORE SPORTS | 101.7k</p>
+                    <RouterLink
+                      to='/article'
+                      style={{ textDecoration: 'none' }}>
+                      <div className='popularstoryback2'>
+                        <div className='featuredphototext'>
+                          <p className='featuredphototitle'>
+                            <b>Choss God</b>
+                          </p>
+                          <p>Nurt | MORE SPORTS | 101.7k</p>
+                        </div>
                       </div>
-                    </div>
+                    </RouterLink>
                   </div>
                 </div>
               </div>
@@ -136,9 +158,11 @@ const Stash = () => {
             <p>Lorem Ipsum</p>
             <p>Lorem Ipsum</p>
             <hr />
-            <p style={{ textAlign: 'center' }}>
-              <FilterHdrIcon /> <b>See More Good Stuff</b>
-            </p>
+            <RouterLink to='/' style={{ textDecoration: 'none' }}>
+              <p style={{ textAlign: 'center', color: 'black' }}>
+                <FilterHdrIcon /> <b>See More Good Stuff</b>
+              </p>
+            </RouterLink>
             <hr />
             <p className='stashhomelabel'>
               <b>CONNECT WITH TGR</b>
@@ -147,7 +171,20 @@ const Stash = () => {
             <p className='stashhomelabel'>
               <b>GET TGR EMAIL UPDATES</b>
             </p>
-            <p> Email signup coming soon</p>
+            <form>
+              <input
+                type='email'
+                name='email'
+                placeholder='Enter Your Email'
+                style={{
+                  textAlign: 'center',
+                  color: 'black',
+                  width: '80%',
+                }}></input>
+              <button type='submit' className='footersend'>
+                SEND IT
+              </button>
+            </form>
             <p className='stashhomelabel'>
               <b>FORUM CONVERSATIONS</b>
             </p>

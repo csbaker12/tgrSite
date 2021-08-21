@@ -2,6 +2,7 @@ import '../../styles/gear.css';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Gear = () => {
   return (
@@ -12,22 +13,26 @@ const Gear = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <div className='gear1'>
-                <div className='geartext'>
-                  <p>
-                    <span className='geartitle'>How Much is Too Much?</span>
-                    <br /> cbakeski | Gear/Tech | 0
-                  </p>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='gear1'>
+                  <div className='geartext'>
+                    <p>
+                      <span className='geartitle'>How Much is Too Much?</span>
+                      <br /> cbakeski | Gear/Tech | 0
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className='gear2'>
-                <div className='geartext'>
-                  <p>
-                    <span className='geartitle'>BozeFlyWorks Review</span>
-                    <br /> carlrex | Gear/Tech | 246.7k
-                  </p>
+              </RouterLink>
+              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+                <div className='gear2'>
+                  <div className='geartext'>
+                    <p>
+                      <span className='geartitle'>BozeFlyWorks Review</span>
+                      <br /> carlrex | Gear/Tech | 246.7k
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </RouterLink>
             </div>
             <div className='col-4 gearalignmediabar'>
               <div>

@@ -1,0 +1,27 @@
+.aboutwrapper {
+  margin: 2% 15%;
+}
+
+.founderme {
+  background-image: url('../images/meyuggin.jpg');
+  background-size: cover;
+  padding-top: 100%;
+}
+
+.founderbg {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 120%;
+  padding-left: 10%;
+}
+
+.foundertitle {
+  color: rgb(0, 195, 255);
+}
+
+.aboutlink {
+  text-decoration: none;
+  color: black;
+  padding: 0%5%;
+  font-size: 120%;
+}

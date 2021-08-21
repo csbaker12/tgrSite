@@ -1,5 +1,6 @@
 import { withRouter } from 'react-router-dom';
 import '../../styles/footer.css';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -8,18 +9,38 @@ const Footer = () => {
         <div className='row'>
           <div className='col-3'>
             <ul className='footerli'>
-              <li>About Us</li>
-              <li>Contributors</li>
+              <li>
+                <RouterLink to='/company' className='footerlink'>
+                  About
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink to='/contributors' className='footerlink'>
+                  Contributors
+                </RouterLink>
+              </li>
               <li>Careers</li>
               <li>Advertise</li>
-              <li>Contact US</li>
+              <li>
+                <RouterLink to='/contact' className='footerlink'>
+                  Contact Us
+                </RouterLink>
+              </li>
               <li>Press Releases</li>
             </ul>
           </div>
           <div className='col-3'>
             <ul className='footerli'>
-              <li>Athletes</li>
-              <li>Staff</li>
+              <li>
+                <RouterLink to='/contributors' className='footerlink'>
+                  Athletes
+                </RouterLink>
+              </li>
+              <li>
+                <RouterLink to='/contributors' className='footerlink'>
+                  Staff
+                </RouterLink>
+              </li>
               <li>Partners</li>
               <li>TGR Studios</li>
               <li>FAQ</li>
@@ -31,6 +52,7 @@ const Footer = () => {
               <br />
               <input
                 type='email'
+                name='email'
                 placeholder='Enter Your Email'
                 style={{
                   textAlign: 'center',
@@ -50,8 +72,10 @@ const Footer = () => {
         <div className='row footerbottom'>
           <div className='col-4 footercol'>
             <p>
-              <a href='/'>TETON GRAVITY RESEARCH</a> &copy; 2017 ALL RIGHTS
-              RESERVED.
+              <a href='/' style={{ textDecoration: 'none', color: 'white' }}>
+                TETON GRAVITY RESEARCH
+              </a>{' '}
+              &copy; 2017 ALL RIGHTS RESERVED.
             </p>
           </div>
           <div className='col-4 footercol'>

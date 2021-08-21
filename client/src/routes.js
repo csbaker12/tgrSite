@@ -28,10 +28,13 @@ import FAQ from './components/footerroutes/faq';
 import FilmDetails from './components/filmdetails';
 import ContestSignup from './components/contests/contestsignup';
 import Article from './components/article';
+import ResetScroll from './components/utils/resetscroll';
+import resetscroll from './components/utils/resetscroll';
 const Routes = () => {
   return (
     <>
       <BrowserRouter>
+        <ResetScroll />
         <Header />
         <LowerNav />
 

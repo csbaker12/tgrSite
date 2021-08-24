@@ -8,30 +8,43 @@ let grantsObject = {
       'update:any': ['*'],
       'delete:any': ['*'],
     },
-    articles: {
-      'read:any': ['*'],
-    },
-    article: {
-      'create:any': ['*'],
-      'read:any': ['*'],
-      'update:any': ['*'],
-      'delete:any': ['*'],
-    },
-    categories: {
-      'create:any': ['*'],
-      'read:any': ['*'],
-      'update:any': ['*'],
-      'delete:any': ['*'],
-    },
+    // articles: {
+    //   'read:any': ['*'],
+    // },
+    // article: {
+    //   'create:any': ['*'],
+    //   'read:any': ['*'],
+    //   'update:any': ['*'],
+    //   'delete:any': ['*'],
+    // },
+    // categories: {
+    //   'create:any': ['*'],
+    //   'read:any': ['*'],
+    //   'update:any': ['*'],
+    //   'delete:any': ['*'],
+    // },
   },
   user: {
     profile: {
-      'read:own': ['*', '!password', '!_id', '!date'],
+      'read:own': ['*', '!password'],
       'update:own': ['*'],
+      'delete:own': ['*'],
     },
-    categories: {
-      'read:any': ['*'],
-    },
+    // articles: {
+    //   'read:any': ['*'],
+    // },
+    // article: {
+    //   'create:any': ['*'],
+    //   'read:any': ['*'],
+    //   'update:own': ['*'],
+    //   'delete:own': ['*'],
+    // },
+    // comments: {
+    //   'create:any': ['*'],
+    //   'read:any': ['*'],
+    //   'update:own': ['*'],
+    //   'delete:own': ['*'],
+    // },
   },
 };
 

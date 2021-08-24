@@ -11,6 +11,7 @@ exports.grantAccess = function (action, resource) {
       }
 
       res.locals.permission = permission;
+      //this lets things like not letting user read their password work
       next();
     } catch (error) {
       next(error);

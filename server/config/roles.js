@@ -8,15 +8,31 @@ let grantsObject = {
       'update:any': ['*'],
       'delete:any': ['*'],
     },
-    // articles: {
-    //   'read:any': ['*'],
-    // },
-    // article: {
-    //   'create:any': ['*'],
-    //   'read:any': ['*'],
-    //   'update:any': ['*'],
-    //   'delete:any': ['*'],
-    // },
+    articles: {
+      'read:any': ['*'],
+    },
+    article: {
+      'create:any': ['*'],
+      'read:any': ['*'],
+      'update:any': ['*'],
+      'delete:any': ['*'],
+    },
+    thread: {
+      'create:any': ['*'],
+      'read:any': ['*'],
+      'update:any': ['*'],
+      'delete:any': ['*'],
+    },
+
+    threads: {
+      'read:any': ['*'],
+    },
+
+    comments: {
+      'create:any': ['*'],
+      'read:any': ['*'],
+      'delete:any': ['*'],
+    },
     // categories: {
     //   'create:any': ['*'],
     //   'read:any': ['*'],
@@ -30,14 +46,25 @@ let grantsObject = {
       'update:own': ['*'],
       'delete:own': ['*'],
     },
+    thread: {
+      'create:any': ['*'],
+      'read:any': ['*'],
+      'update:any': ['*'],
+      'delete:own': ['*'],
+    },
+    threads: {
+      'read:any': ['*'],
+    },
+    comments: {
+      'create:any': ['*'],
+      'read:any': ['*'],
+      'delete:own': ['*'],
+    },
     // articles: {
     //   'read:any': ['*'],
     // },
     // article: {
-    //   'create:any': ['*'],
     //   'read:any': ['*'],
-    //   'update:own': ['*'],
-    //   'delete:own': ['*'],
     // },
     // comments: {
     //   'create:any': ['*'],

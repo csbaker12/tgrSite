@@ -1,11 +1,30 @@
 import '../../styles/stash.css';
+import { useReducer, useEffect } from 'react';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
 import FilterHdrIcon from '@material-ui/icons/FilterHdr';
 import { Link as RouterLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getArticles } from '../../store/actions/article_actions';
+import ArticleCard from '../utils/articlecard';
+
+const initialSort = { sortBy: '_id', order: 'desc', limit: 9, skip: 0 };
 
 const Stash = () => {
+  const [sort, setSort] = useReducer(
+    (state, newState) => ({ ...state, ...newState }),
+    initialSort
+  );
+  const articles = useSelector((state) => state.articles);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (articles && !articles.articles) {
+      dispatch(getArticles(initialSort));
+    }
+  }, [dispatch, articles]);
+
   return (
     <div className='stashheader'>
       <hr />
@@ -198,7 +217,19 @@ const Stash = () => {
       </p>
       <hr />
       <div>
-        <h1 style={{ textAlign: 'center' }}>I HAVE NOT DONE THIS YET</h1>
+        {articles && articles.articles
+          ? articles.articles.map((item) => <ArticleCard article={item} />)
+          : null}
+      </div>
+      <div>
+        <button
+          onClick={() => {
+            let skip = sort.skip + sort.limit;
+            dispatch(getArticles({ ...sort, skip: skip }));
+            setSort({ skip: skip });
+          }}>
+          Load More
+        </button>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ const SignInCard = () => {
   return (
     <>
       <h1 className='signinheader'>SIGN IN:</h1>
-      <form className='signinform' action='/'>
+      <form className='signinform' action='/auth'>
         <input
           type='text'
           placeholder='Enter your email'

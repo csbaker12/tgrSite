@@ -1,5 +1,5 @@
 import '../../styles/auth.css';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { TextField, Button } from '@material-ui/core';
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../store/actions/users_actions';
 
 const Auth = (props) => {
-  const [register, setRegister] = useState(true);
+  // const [register, setRegister] = useState(true);
   const notifications = useSelector((state) => state.notifications);
   const dispatch = useDispatch();
 
@@ -26,9 +26,13 @@ const Auth = (props) => {
   });
 
   const handleSubmit = (values) => {
-    if (register) {
-      dispatch(registerUser(values));
-    }
+    // if (register) {
+    //   dispatch(registerUser(values));
+    // }
+    // } else {
+    //   dispatch(signInUser(values));
+    // }
+    dispatch(registerUser(values));
   };
 
   const errorHelper = (formik, values) => ({
@@ -48,7 +52,8 @@ const Auth = (props) => {
   return (
     <>
       <div className='authstruct'>
-        <h1 className='mt-3 mb-3'> {register ? 'Register' : 'Login'}</h1>
+        {/* <h1 className='mt-3 mb-3'> {register ? 'Register' : 'Login'}</h1> */}
+        <h1 className='mt-3 mb-3'>Register</h1>
         <form onSubmit={formik.handleSubmit}>
           <div>
             <TextField
@@ -61,21 +66,17 @@ const Auth = (props) => {
             />
           </div>
           <br />
-          {register ? (
-            <>
-              <div>
-                <TextField
-                  style={{ width: '100%' }}
-                  name='username'
-                  label='Enter your username'
-                  variant='outlined'
-                  {...formik.getFieldProps('username')}
-                  {...errorHelper(formik, 'username')}
-                />
-              </div>
-              <br />
-            </>
-          ) : null}
+          <div>
+            <TextField
+              style={{ width: '100%' }}
+              name='username'
+              label='Enter your username'
+              variant='outlined'
+              {...formik.getFieldProps('username')}
+              {...errorHelper(formik, 'username')}
+            />
+          </div>
+          <br />
           <div>
             <TextField
               style={{ width: '100%' }}
@@ -93,15 +94,16 @@ const Auth = (props) => {
             color='primary'
             type='submit'
             size='large'>
-            {register ? 'Register' : 'Login'}
+            {/* {register ? 'Register' : 'Login'} */}
+            Register
           </Button>{' '}
-          <Button
+          {/* <Button
             variant='outlined'
             color='secondary'
             size='large'
             onClick={() => setRegister(!register)}>
             Want to {!register ? 'Register' : 'Login'}?
-          </Button>
+          </Button> */}
         </form>
       </div>
     </>

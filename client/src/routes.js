@@ -36,6 +36,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { showToast } from './components/utils/tools';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearNotifications } from '../src/store/actions/index';
+import { isAuthUser } from './store/actions/users_actions';
 
 const Routes = () => {
   const notifications = useSelector((state) => state.notifications);
@@ -53,6 +54,10 @@ const Routes = () => {
       dispatch(clearNotifications());
     }
   }, [notifications, dispatch]);
+
+  useEffect(() => {
+    dispatch(isAuthUser());
+  }, [dispatch]);
 
   return (
     <>

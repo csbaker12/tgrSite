@@ -1,10 +1,34 @@
 import { NavLink } from 'react-router-dom';
 import '../../styles/settings.css';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { signOut } from '../../store/actions/users_actions';
 
 const SettingsForm = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const signOutUser = () => {
+    dispatch(signOut());
+    history.push('/');
+    console.log('done');
+  };
+
   return (
     <>
       <div className='settingscontent'>
+        <NavLink to='/join' className='settingsitem'>
+          Sign In
+        </NavLink>
+        <br />
+        <div
+          className='settingsitem'
+          onClick={() => {
+            signOutUser();
+          }}>
+          Sign Out
+        </div>
+        <br />
         <NavLink to='/forums' className='settingsitem'>
           New Posts
         </NavLink>

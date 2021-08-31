@@ -1,0 +1,21 @@
+.featuredphototitle {
+  font-size: 120%;
+  margin-bottom: 0;
+}
+
+.featuredphototext {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.articlecardwrap {
+  background-image: url('../images/cracker.jpeg');
+  background-size: cover;
+  padding-top: 45%;
+  margin-bottom: 2%;
+  color: white;
+  text-align: center;
+}
+
+.featuredphotocontent {
+  font-size: 90%;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Home from './components/home';
 import Header from './components/nav/header';
@@ -29,16 +29,42 @@ import FilmDetails from './components/filmdetails';
 import ContestSignup from './components/contests/contestsignup';
 import Article from './components/article';
 import ResetScroll from './components/utils/resetscroll';
+import Auth from './components/auth';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { showToast } from './components/utils/tools';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearNotifications } from '../src/store/actions/index';
+
 const Routes = () => {
+  const notifications = useSelector((state) => state.notifications);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (notifications && notifications.error) {
+      const msg = notifications.msg ? notifications.msg : 'Error';
+      showToast('ERROR', msg);
+      dispatch(clearNotifications());
+    }
+    if (notifications && notifications.success) {
+      const msg = notifications.msg ? notifications.msg : 'Success';
+      showToast('SUCCESS', msg);
+      dispatch(clearNotifications());
+    }
+  }, [notifications, dispatch]);
+
   return (
     <>
       <BrowserRouter>
         <ResetScroll />
         <Header />
+        <ToastContainer />
         <LowerNav />
 
         <Switch>
           {/* <Route path='/connect' component={Connect} /> */}
+          <Route path='/auth' component={Auth} />
           <Route path='/article' component={Article} />
           <Route path='/contestsignup' component={ContestSignup} />
           <Route path='/filmdetails' component={FilmDetails} />

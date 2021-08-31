@@ -216,9 +216,13 @@ const Stash = () => {
         <b>MORE FROM THE STASH</b>
       </p>
       <hr />
-      <div>
+      <div className='articleloaderformat row'>
         {articles && articles.articles
-          ? articles.articles.map((item) => <ArticleCard article={item} />)
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} />
+              </div>
+            ))
           : null}
       </div>
       <div>

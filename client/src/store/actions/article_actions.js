@@ -13,6 +13,9 @@ export const getArticles = (sort) => {
         newArts = [...prevArts, ...arts.data];
       }
       dispatch(articles.getArticles(newArts));
-    } catch (error) {}
+      dispatch(articles.successGlobal('Content Loaded'));
+    } catch (error) {
+      dispatch(articles.errorGlobal('Error Loading Articles'));
+    }
   };
 };

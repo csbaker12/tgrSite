@@ -5,12 +5,36 @@ import {
   CLEAR_NOTIFICATION,
   AUTH_USER,
   SIGN_OUT,
+  GET_ARTICLE,
+  CLEAR_ARTICLE,
+  ADD_ARTICLE,
+  GET_ADMIN_ARTICLES,
+  REMOVE_ARTICLE,
 } from '../types';
 
 ///////articles actions
 
 export const getArticles = (articles) => ({
   type: GET_ARTICLES,
+  payload: articles,
+});
+
+export const getArticle = (article) => ({
+  type: GET_ARTICLE,
+  payload: article,
+});
+
+export const clearArticle = () => ({
+  type: CLEAR_ARTICLE,
+});
+
+export const addArticle = (article) => ({
+  type: ADD_ARTICLE,
+  payload: article,
+});
+
+export const getPaginateArticles = (articles) => ({
+  type: GET_ADMIN_ARTICLES,
   payload: articles,
 });
 
@@ -32,6 +56,10 @@ export const clearNotifications = () => {
     });
   };
 };
+
+export const removeArticle = () => ({
+  type: REMOVE_ARTICLE,
+});
 
 ///////auth actions
 export const authUser = (user) => ({

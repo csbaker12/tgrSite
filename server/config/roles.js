@@ -50,7 +50,6 @@ let grantsObject = {
       'create:any': ['*'],
       'read:any': ['*'],
       'update:any': ['*'],
-      'delete:own': ['*'],
     },
     threads: {
       'read:any': ['*'],
@@ -58,7 +57,6 @@ let grantsObject = {
     comments: {
       'create:any': ['*'],
       'read:any': ['*'],
-      'delete:own': ['*'],
     },
     // articles: {
     //   'read:any': ['*'],

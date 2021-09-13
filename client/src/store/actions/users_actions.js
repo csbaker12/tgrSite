@@ -2,6 +2,7 @@ import * as users from './index';
 import axios from 'axios';
 import {
   getAuthHeaders,
+  getTokenCookie,
   removeTokenCookie,
 } from '../../components/utils/tools';
 
@@ -42,7 +43,10 @@ export const signInUser = (values) => {
 export const isAuthUser = () => {
   return async (dispatch) => {
     try {
-      const user = await axios.get(`/community/users/isauth`, getAuthHeaders);
+      if (!getTokenCookie()) {
+        throw new Error();
+      }
+      const user = await axios.get(`/community/users/isauth`, getAuthHeaders());
       dispatch(users.authUser({ data: user.data, auth: true }));
     } catch (error) {
       dispatch(users.authUser({ data: {}, auth: false }));

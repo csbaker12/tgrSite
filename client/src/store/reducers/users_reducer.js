@@ -5,15 +5,12 @@ let DEFAULT_USER_STATE = {
     _id: null,
     email: null,
     username: null,
-    firstname: null,
-    lastname: null,
     role: null,
-    location: null,
   },
-  auth: null,
+  auth: false,
 };
 
-export default function usersReducer(state = { DEFAULT_USER_STATE }, action) {
+export default function usersReducer(state = DEFAULT_USER_STATE, action) {
   switch (action.type) {
     case AUTH_USER:
       return {

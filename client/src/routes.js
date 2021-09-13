@@ -30,6 +30,11 @@ import ContestSignup from './components/contests/contestsignup';
 import Article from './components/article';
 import ResetScroll from './components/utils/resetscroll';
 import Auth from './components/auth';
+import Admin from './components/admin';
+import AdminForum from './components/admin/adminforum';
+import AdminArticles from './components/admin/adminarticles';
+import AuthGuard from './hoc/authguard';
+import AddArticle from './components/article/add';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -38,7 +43,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clearNotifications } from '../src/store/actions/index';
 import { isAuthUser } from './store/actions/users_actions';
 
-const Routes = () => {
+const Routes = (props) => {
   const notifications = useSelector((state) => state.notifications);
   const dispatch = useDispatch();
 
@@ -69,8 +74,12 @@ const Routes = () => {
 
         <Switch>
           {/* <Route path='/connect' component={Connect} /> */}
+          <Route path='/admin/add' component={AuthGuard(AddArticle)} />
+          <Route path='/admin/articles' component={AuthGuard(AdminArticles)} />
+          <Route path='/admin/forum' component={AuthGuard(AdminForum)} />
+          <Route path='/admin' component={AuthGuard(Admin)} />
           <Route path='/auth' component={Auth} />
-          <Route path='/article' component={Article} />
+          <Route path='/article/:id' component={Article} />
           <Route path='/contestsignup' component={ContestSignup} />
           <Route path='/filmdetails' component={FilmDetails} />
           <Route path='/adventure' component={Adventure} />

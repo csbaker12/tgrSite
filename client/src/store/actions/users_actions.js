@@ -40,6 +40,66 @@ export const signInUser = (values) => {
   };
 };
 
+export const getUserProfile = () => {
+  return async (dispatch) => {
+    try {
+      const request = await axios.get(
+        `/community/users/profile`,
+        getAuthHeaders()
+      );
+      dispatch(users.getProfile(request.data));
+      console.log(request.data);
+    } catch (error) {
+      dispatch(users.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
+export const updateProfile = (profile) => {
+  return async (dispatch) => {
+    try {
+      const request = await axios.patch(
+        `/community/users/profile`,
+        profile,
+        getAuthHeaders()
+      );
+      dispatch(users.updateProfile(request.data));
+    } catch (error) {
+      dispatch(users.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
+export const updateEmail = (email) => {
+  return async (dispatch) => {
+    try {
+      const request = await axios.patch(
+        `/community/users/updateemail`,
+        email,
+        getAuthHeaders()
+      );
+      dispatch(users.updateEmail(request.data));
+    } catch (error) {
+      dispatch(users.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
+export const updateUsername = (username) => {
+  return async (dispatch) => {
+    try {
+      const request = await axios.patch(
+        `/community/users/updateusername`,
+        username,
+        getAuthHeaders()
+      );
+      dispatch(users.updateUsername(request.data));
+    } catch (error) {
+      dispatch(users.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
 export const isAuthUser = () => {
   return async (dispatch) => {
     try {

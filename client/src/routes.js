@@ -35,6 +35,10 @@ import AdminForum from './components/admin/adminforum';
 import AdminArticles from './components/admin/adminarticles';
 import AuthGuard from './hoc/authguard';
 import AddArticle from './components/article/add';
+import EditArticle from './components/article/edit';
+import AddThread from './components/thread/add';
+import Thread from './components/thread';
+import Profile from './components/profile';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -74,6 +78,10 @@ const Routes = (props) => {
 
         <Switch>
           {/* <Route path='/connect' component={Connect} /> */}
+          <Route path='/profile' component={Profile} />
+          <Route path='/thread/new' component={AddThread} />
+          <Route path='/thread/:id' component={Thread} />
+          <Route path='/admin/edit/:id' component={AuthGuard(EditArticle)} />
           <Route path='/admin/add' component={AuthGuard(AddArticle)} />
           <Route path='/admin/articles' component={AuthGuard(AdminArticles)} />
           <Route path='/admin/forum' component={AuthGuard(AdminForum)} />

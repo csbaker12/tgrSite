@@ -1,0 +1,11 @@
+.profilewrapper {
+  margin: 3%15%;
+}
+
+.profilecontentwrapper {
+  text-align: center;
+  margin-bottom: 3%;
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding: 5%5%;
+}

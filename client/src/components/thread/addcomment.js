@@ -1,31 +1,27 @@
 import { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import '../../styles/addarticle.css';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { validation, formValues } from './validationSchema';
+import { validation, formValues } from './commentValidationSchema';
 import { TextField, Button, Divider, FormHelperText } from '@material-ui/core';
+import { addComment } from '../../store/actions/forum_actions';
 import WYSIWYG from '../utils/forms/wysiwyg';
-import {
-  getAdminArticle,
-  updateArticle,
-} from '../../store/actions/article_actions';
-import { clearArticle } from '../../store/actions/index';
 
-const EditArticle = (props) => {
+const AddComment = ({ id }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const notifications = useSelector((state) => state.notifications);
-  const articles = useSelector((state) => state.articles);
-  const [formData, setFormData] = useState(formValues);
   const [editorBlur, setEditorBlur] = useState(false);
-  const [editContent, setEditContent] = useState(null);
 
   const formik = useFormik({
     enableReinitialize: true,
-    initialValues: formData,
+    initialValues: formValues,
     validationSchema: validation,
     onSubmit: (values, { resetForm }) => {
-      dispatch(updateArticle(values, props.match.params.id));
-      dispatch(clearArticle());
+      const newComment = { comment: { ...values } };
+      dispatch(addComment(newComment, id));
+      console.log(newComment);
     },
   });
 
@@ -47,40 +43,17 @@ const EditArticle = (props) => {
 
   useEffect(() => {
     if (notifications && notifications.success) {
-      props.history.push('/admin/articles');
+      history.push(`/forums`);
     }
   });
-
-  useEffect(() => {
-    dispatch(getAdminArticle(props.match.params.id));
-  }, [dispatch, props.match.params.id]);
-
-  useEffect(() => {
-    if (articles && articles.current) {
-      setFormData(articles.current);
-      setEditContent(articles.current.content);
-    }
-  }, [articles]);
 
   return (
     <div className='addarticlewrapper'>
       <form onSubmit={formik.handleSubmit}>
-        <div>
-          <TextField
-            style={{ width: '100%' }}
-            name='title'
-            label='Enter a title'
-            variant='outlined'
-            {...formik.getFieldProps('title')}
-            {...errorHelper(formik, 'title')}
-          />
-        </div>
-
         <div className='mt-3'>
           <WYSIWYG
             setEditorState={(state) => handleEditorState(state)}
             setEditorBlur={(blur) => handleEditorBlur(blur)}
-            editContent={editContent}
           />
 
           {formik.errors.content && editorBlur ? (
@@ -110,11 +83,11 @@ const EditArticle = (props) => {
 
         <Divider className='mt-3 mb-3' />
         <Button variant='contained' color='primary' type='submit'>
-          Save Changes
+          Post Comment
         </Button>
       </form>
     </div>
   );
 };
 
-export default EditArticle;
+export default AddComment;

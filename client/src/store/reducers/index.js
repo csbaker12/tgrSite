@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import articles from './articles_reducer';
 import users from './users_reducer';
 import site from './site_reducer';
+import threads from './forums_reducer';
 import notifications from './notification_reducer';
 
 const appReducers = combineReducers({
@@ -9,6 +10,7 @@ const appReducers = combineReducers({
   users,
   site,
   notifications,
+  threads,
 });
 
 export default appReducers;

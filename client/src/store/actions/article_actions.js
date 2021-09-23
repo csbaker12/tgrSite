@@ -77,3 +77,33 @@ export const removeArticle = (id) => {
     }
   };
 };
+
+export const getAdminArticle = (id) => {
+  return async (dispatch) => {
+    try {
+      const request = await axios.get(
+        `/articles/admin/${id}`,
+        getAuthHeaders()
+      );
+      dispatch(articles.getArticle(request.data));
+    } catch (error) {
+      dispatch(articles.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
+export const updateArticle = (article, id) => {
+  return async (dispatch) => {
+    try {
+      const newArticle = await axios.patch(
+        `/articles/admin/${id}`,
+        article,
+        getAuthHeaders()
+      );
+      dispatch(articles.getArticle(newArticle.data));
+      dispatch(articles.successGlobal('Article Updated!'));
+    } catch (error) {
+      dispatch(articles.errorGlobal('Error Updating Article'));
+    }
+  };
+};

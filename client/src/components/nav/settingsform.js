@@ -28,7 +28,15 @@ const SettingsForm = () => {
           }}>
           Sign Out
         </div>
+        <NavLink to='/admin/articles' className='settingsitem'>
+          Admin
+        </NavLink>
         <br />
+        <NavLink to='/profile' className='settingsitem'>
+          Profile
+        </NavLink>
+        <br />
+        <hr className='settingsdivider' />
         <NavLink to='/forums' className='settingsitem'>
           New Posts
         </NavLink>

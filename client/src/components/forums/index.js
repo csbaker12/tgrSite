@@ -1,11 +1,17 @@
-import { useState } from 'react';
+import { useState, useReducer, useEffect } from 'react';
 import '../../styles/forums.css';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
-import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
+import { Link as RouterLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getThreads } from '../../store/actions/forum_actions';
+import ThreadCard from '../utils/threadcard';
+
+const initialState = { sortBy: '_id', order: 'desc', limit: 20, skip: 0 };
+
 const Forums = () => {
   const [ski, setSki] = useState(true);
   const [bike, setBike] = useState(true);
@@ -48,6 +54,19 @@ const Forums = () => {
     setTech(!tech);
   };
 
+  const [sort, setSort] = useReducer(
+    (state, newState) => ({ ...state, ...newState }),
+    initialState
+  );
+  const threads = useSelector((state) => state.threads);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (threads && !threads.threads) {
+      dispatch(getThreads(initialState));
+    }
+  }, [dispatch, threads]);
+
   return (
     <>
       <div className='forumswrapper'>
@@ -83,70 +102,12 @@ const Forums = () => {
                   <p className='forumdescription'>
                     Your place for all things skiing and snowboarding
                   </p>
-                  {ski ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+
+                  {ski && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'ski'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>BIKE</div>
                     <div className='col-2 '>THREADS</div>
@@ -156,7 +117,7 @@ const Forums = () => {
                       align='right'
                       forumshow
                       onClick={() => handleBike()}>
-                      {ski ? (
+                      {bike ? (
                         <>
                           <RemoveCircleIcon />
                         </>
@@ -168,70 +129,12 @@ const Forums = () => {
                   <p className='forumdescription'>
                     Bike junkies check in here!
                   </p>
-                  {bike ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+
+                  {bike && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'bike'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>ADVENTURE/OTHER SPORTS</div>
                     <div className='col-2 '>THREADS</div>
@@ -254,70 +157,11 @@ const Forums = () => {
                     Enjoy the outdoors. Your place for surfing, kayaking,
                     fishing, climbing and anything outdoors!
                   </p>
-                  {adventure ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  {adventure && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'adventure'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>GEAR & BUY/SELL</div>
                     <div className='col-2 '>THREADS</div>
@@ -339,70 +183,11 @@ const Forums = () => {
                   <p className='forumdescription'>
                     Talk about equipment, buy and sell gear
                   </p>
-                  {gear ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  {gear && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'gear'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>CONNECTIONS</div>
                     <div className='col-2 '>THREADS</div>
@@ -425,70 +210,11 @@ const Forums = () => {
                     Find jobs, rides, fellow gimps, shred partners mountain meet
                     ups and more
                   </p>
-                  {connections ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  {connections && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'connections'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>MEDIA & ARTS</div>
                     <div className='col-2 '>THREADS</div>
@@ -508,70 +234,11 @@ const Forums = () => {
                     </div>
                   </div>
                   <p className='forumdescription'>Media talk here!</p>
-                  {media ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  {media && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'media'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>CHATTER, BLATHER & ARCHIVES</div>
                     <div className='col-2 '>THREADS</div>
@@ -594,70 +261,11 @@ const Forums = () => {
                     Random stuff and old stuff!
                   </p>
 
-                  {chatter ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  {chatter && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'chatter'} />
+                      ))
+                    : null}
                   <div className='forumlabel row '>
                     <div className='col-8 '>TECH SUPPORT</div>
                     <div className='col-2 '>THREADS</div>
@@ -680,70 +288,11 @@ const Forums = () => {
                     Check in here to ask TGR that question that's been driving
                     you nuts!
                   </p>
-                  {tech ? (
-                    <>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className='forumentry'>
-                        <div className='row'>
-                          <div className='col-8'>
-                            <div className='row'>
-                              <div className='col-1'>
-                                <InsertDriveFileIcon
-                                  style={{ fontSize: '50px' }}
-                                />
-                              </div>
-                              <div className='col-11'>
-                                <p>
-                                  <b>Title</b>
-                                </p>
-                                <p>Description of thread</p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='col-2'>
-                            <p>Threads: 12</p>
-                            <p>Posts: 151</p>
-                          </div>
-                          <div className='col-2'>
-                            <p>lorem ipsum</p>
-                            <p>
-                              By <b>cbakeski</b>
-                            </p>
-                            <p>Today</p>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  {tech && threads.threads
+                    ? threads.threads.map((item) => (
+                        <ThreadCard thread={item} cat={'tech'} />
+                      ))
+                    : null}
                 </div>
               </div>
               <div className='col-2 alignmediabar'>
@@ -751,10 +300,15 @@ const Forums = () => {
                   <p>
                     <b>THE STASH</b>
                   </p>
-                  <p>
-                    UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                    <DescriptionIcon />
-                  </p>
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
+
                   <p>
                     <b>POPULAR THIS WEEK ON TGR:</b>
                   </p>

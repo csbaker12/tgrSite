@@ -3,11 +3,11 @@ import Moment from 'react-moment';
 import '../../styles/adminpaginate.css';
 
 const PaginationComponent = ({
-  arts,
+  threads,
   prev,
   next,
   handleShow,
-  editArtsAction,
+  // editthreadsAction,
 }) => {
   const goToPrevPage = (page) => {
     prev(page);
@@ -19,7 +19,7 @@ const PaginationComponent = ({
 
   return (
     <>
-      {arts && arts.docs ? (
+      {threads && threads.docs ? (
         <>
           <Table striped bordered hover>
             <thead>
@@ -30,7 +30,7 @@ const PaginationComponent = ({
               </tr>
             </thead>
             <tbody>
-              {arts.docs.map((item) => (
+              {threads.docs.map((item) => (
                 <tr key={item._id}>
                   <td>
                     <Moment to={item.date}></Moment>
@@ -42,29 +42,24 @@ const PaginationComponent = ({
                     className='removebtn'>
                     Remove
                   </td>
-                  <td
-                    onClick={() => editArtsAction(item._id)}
-                    className='removebtn'>
-                    Edit
-                  </td>
                 </tr>
               ))}
             </tbody>
           </Table>
           <Pagination>
-            {arts.hasPrevPage ? (
+            {threads.hasPrevPage ? (
               <>
-                <Pagination.Item onClick={() => goToPrevPage(arts.prevPage)}>
+                <Pagination.Item onClick={() => goToPrevPage(threads.prevPage)}>
                   {'<'}
                 </Pagination.Item>
-                <Pagination.Item>{arts.prevPage}</Pagination.Item>
+                <Pagination.Item>{threads.prevPage}</Pagination.Item>
               </>
             ) : null}
-            <Pagination.Item active>{arts.page}</Pagination.Item>
-            {arts.hasNextPage ? (
+            <Pagination.Item active>{threads.page}</Pagination.Item>
+            {threads.hasNextPage ? (
               <>
-                <Pagination.Item>{arts.nextPage}</Pagination.Item>
-                <Pagination.Item onClick={() => goToNextPage(arts.nextPage)}>
+                <Pagination.Item>{threads.nextPage}</Pagination.Item>
+                <Pagination.Item onClick={() => goToNextPage(threads.nextPage)}>
                   {'>'}
                 </Pagination.Item>
               </>

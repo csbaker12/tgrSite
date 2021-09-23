@@ -60,6 +60,10 @@ const AdminArticles = (props) => {
     dispatch(removeArticle(toRemove));
   };
 
+  const editArtsAction = (id) => {
+    props.history.push(`/admin/edit/${id}`);
+  };
+
   return (
     <div className='adminlayout'>
       <div className='row'>
@@ -97,6 +101,7 @@ const AdminArticles = (props) => {
             prev={(page) => goToPrevPage(page)}
             next={(page) => goToNextPage(page)}
             handleShow={(id) => handleShow(id)}
+            editArtsAction={(id) => editArtsAction(id)}
           />
           <Modal show={removeAlert} onHide={() => setRemoveAlert(false)}>
             <Modal.Header>

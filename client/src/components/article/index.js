@@ -30,7 +30,13 @@ const Article = (props) => {
       ) : (
         <div className='articlebg'>
           <div className='articletext'>
-            {current ? <p>{current.author}</p> : null}
+            {current ? (
+              <>
+                <p>{current.author}</p>
+                <div
+                  dangerouslySetInnerHTML={{ __html: current.content }}></div>
+              </>
+            ) : null}
           </div>
         </div>
       )}

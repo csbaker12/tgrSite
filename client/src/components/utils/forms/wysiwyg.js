@@ -20,6 +20,22 @@ const WYSIWYG = (props) => {
     props.setEditorState(HTMLData);
   };
 
+  ///edit
+  useEffect(() => {
+    if (props.editContent) {
+      const blockFromHtml = htmlToDraft(props.editContent);
+      const { contentBlocks, entityMap } = blockFromHtml;
+      const contentState = ContentState.createFromBlockArray(
+        contentBlocks,
+        entityMap
+      );
+
+      setEditorData({
+        editorState: EditorState.createWithContent(contentState),
+      });
+    }
+  }, [props.editContent]);
+
   return (
     <div>
       <Editor

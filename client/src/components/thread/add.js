@@ -3,29 +3,29 @@ import '../../styles/addarticle.css';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { validation, formValues } from './validationSchema';
-import { TextField, Button, Divider, FormHelperText } from '@material-ui/core';
-import WYSIWYG from '../utils/forms/wysiwyg';
 import {
-  getAdminArticle,
-  updateArticle,
-} from '../../store/actions/article_actions';
-import { clearArticle } from '../../store/actions/index';
+  TextField,
+  Button,
+  Divider,
+  FormHelperText,
+  Select,
+  FormControl,
+  MenuItem,
+} from '@material-ui/core';
+import { addThread } from '../../store/actions/forum_actions';
+import WYSIWYG from '../utils/forms/wysiwyg';
 
-const EditArticle = (props) => {
+const AddThread = (props) => {
   const dispatch = useDispatch();
   const notifications = useSelector((state) => state.notifications);
-  const articles = useSelector((state) => state.articles);
-  const [formData, setFormData] = useState(formValues);
   const [editorBlur, setEditorBlur] = useState(false);
-  const [editContent, setEditContent] = useState(null);
 
   const formik = useFormik({
     enableReinitialize: true,
-    initialValues: formData,
+    initialValues: formValues,
     validationSchema: validation,
     onSubmit: (values, { resetForm }) => {
-      dispatch(updateArticle(values, props.match.params.id));
-      dispatch(clearArticle());
+      dispatch(addThread(values));
     },
   });
 
@@ -47,20 +47,9 @@ const EditArticle = (props) => {
 
   useEffect(() => {
     if (notifications && notifications.success) {
-      props.history.push('/admin/articles');
+      props.history.push('/forums');
     }
   });
-
-  useEffect(() => {
-    dispatch(getAdminArticle(props.match.params.id));
-  }, [dispatch, props.match.params.id]);
-
-  useEffect(() => {
-    if (articles && articles.current) {
-      setFormData(articles.current);
-      setEditContent(articles.current.content);
-    }
-  }, [articles]);
 
   return (
     <div className='addarticlewrapper'>
@@ -80,7 +69,6 @@ const EditArticle = (props) => {
           <WYSIWYG
             setEditorState={(state) => handleEditorState(state)}
             setEditorBlur={(blur) => handleEditorBlur(blur)}
-            editContent={editContent}
           />
 
           {formik.errors.content && editorBlur ? (
@@ -107,14 +95,33 @@ const EditArticle = (props) => {
             {...errorHelper(formik, 'author')}
           />
         </div>
+        <br />
+        <FormControl>
+          <h5>Select a Category</h5>
+          <Select
+            name='category'
+            {...formik.getFieldProps('category')}
+            error={
+              formik.errors.cateogry && formik.touched.category ? true : false
+            }>
+            <MenuItem value='ski'>Ski/Board</MenuItem>
+            <MenuItem value='bike'>Bike</MenuItem>
+            <MenuItem value='adventure'>Adventure/Other</MenuItem>
+            <MenuItem value='gear'>Gear Buy/Sell</MenuItem>
+            <MenuItem value='connections'>Connections</MenuItem>
+            <MenuItem value='media'>Media and Arts</MenuItem>
+            <MenuItem value='chatter'>Chatter, Blather, and Archives</MenuItem>
+            <MenuItem value='tech'>Tech Support</MenuItem>
+          </Select>
+        </FormControl>
 
         <Divider className='mt-3 mb-3' />
         <Button variant='contained' color='primary' type='submit'>
-          Save Changes
+          Create Thread
         </Button>
       </form>
     </div>
   );
 };
 
-export default EditArticle;
+export default AddThread;

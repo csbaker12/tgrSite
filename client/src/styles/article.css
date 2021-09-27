@@ -7,10 +7,27 @@
 }
 
 .articletext {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
-  margin-left: 30%;
-  margin-right: 30%;
-  font-size: 300%;
+  margin: 3%15%;
+}
+
+.articletitle {
+  font-weight: bold;
+  font-size: 190%;
+}
+
+.articlesubtitle {
+  font-size: 140%;
+}
+
+.articletitlewrap {
+  background-color: lightgray;
+  padding: 0%;
+  border-bottom: 1px solid rgb(87, 81, 81);
+}
+
+.articlewrap {
+  border: 1px solid black;
+  margin: 3%15%;
+  text-align: center;
 }

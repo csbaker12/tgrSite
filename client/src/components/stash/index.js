@@ -1,5 +1,5 @@
 import '../../styles/stash.css';
-import { useReducer, useEffect } from 'react';
+import { useReducer, useEffect, useState } from 'react';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import CameraAltIcon from '@material-ui/icons/CameraAlt';
 import DescriptionIcon from '@material-ui/icons/Description';
@@ -8,6 +8,9 @@ import { Link as RouterLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticles } from '../../store/actions/article_actions';
 import ArticleCard from '../utils/articlecard';
+import { Button, MenuItem, FormControl, Select } from '@material-ui/core';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const initialSort = { sortBy: '_id', order: 'desc', limit: 9, skip: 0 };
 
@@ -18,6 +21,107 @@ const Stash = () => {
   );
   const articles = useSelector((state) => state.articles);
   const dispatch = useDispatch();
+  const [allCats, setAllCats] = useState(true);
+  const [ski, setSki] = useState(false);
+  const [snowboard, setSnowboard] = useState(false);
+  const [bike, setBike] = useState(false);
+  const [surf, setSurf] = useState(false);
+  const [adventure, setAdventure] = useState(false);
+  const [gear, setGear] = useState(false);
+  const [culture, setCulture] = useState(false);
+  const [news, setNews] = useState(false);
+  const [moreSports, setMoreSports] = useState(false);
+  const [films, setFilms] = useState(false);
+
+  let filtercat = 'AllCats';
+
+  const formik = useFormik({
+    enableReinitialize: true,
+    initialValues: { filterby: 'AllCats' },
+    validationSchema: Yup.object({
+      // sortby: Yup.string().required('This is required'),
+      filterby: Yup.string().required('This is required'),
+    }),
+    onSubmit: (values, { resetForm }) => {
+      filtercat = values.filterby;
+      changeState(filtercat);
+
+      // const sortby = values.sortby;
+    },
+  });
+
+  const changeState = (filtercat) => {
+    toggleCategories();
+
+    if (filtercat === 'AllCats') {
+      setAllCats(true);
+    }
+    if (filtercat === 'Ski') {
+      setSki(true);
+    }
+    if (filtercat === 'Snowboard') {
+      setSnowboard(true);
+    }
+    if (filtercat === 'Bike') {
+      setBike(true);
+    }
+    if (filtercat === 'Surf') {
+      setSurf(true);
+    }
+    if (filtercat === 'Adventure') {
+      setAdventure(true);
+    }
+    if (filtercat === 'Gear') {
+      setGear(true);
+    }
+    if (filtercat === 'Culture') {
+      setCulture(true);
+    }
+    if (filtercat === 'News') {
+      setNews(true);
+    }
+    if (filtercat === 'MoreSports') {
+      setMoreSports(true);
+    }
+    if (filtercat === 'Films') {
+      setFilms(true);
+    }
+  };
+
+  const toggleCategories = () => {
+    setAllCats(false);
+    setSki(false);
+    setSnowboard(false);
+    setBike(false);
+    setSurf(false);
+    setAdventure(false);
+    setGear(false);
+    setCulture(false);
+    setNews(false);
+    setMoreSports(false);
+    setFilms(false);
+  };
+
+  // const errorHelper = (formik, values) => ({
+  //   error: formik.errors[values] && formik.touched[values] ? true : false,
+  //   helperText:
+  //     formik.errors[values] && formik.touched[values]
+  //       ? formik.errors[values]
+  //       : null,
+  // });
+
+  // const sortby = 'mostrecent';
+
+  // const filterStash = (cat) => {
+  //   filterby = cat;
+  //   if (filterby === 'allcats') {
+  //     setFilters(false);
+  //   }
+  //   // const sortby = values.sortby;
+  //   else {
+  //     setFilters(true);
+  //   }
+  // };
 
   useEffect(() => {
     if (articles && !articles.articles) {
@@ -167,8 +271,14 @@ const Stash = () => {
               <b>THE STASH</b>
             </p>
             <p>
-              UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-              <DescriptionIcon />
+              <RouterLink
+                to='/thread/new'
+                style={{ textDecoration: 'none', color: 'black' }}>
+                <p>
+                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                  <DescriptionIcon />
+                </p>
+              </RouterLink>
             </p>
             <p className='stashhomelabel'>
               <b>POPULAR RIGHT NOW:</b>
@@ -177,7 +287,7 @@ const Stash = () => {
             <p>Lorem Ipsum</p>
             <p>Lorem Ipsum</p>
             <hr />
-            <RouterLink to='/' style={{ textDecoration: 'none' }}>
+            <RouterLink to='/stash' style={{ textDecoration: 'none' }}>
               <p style={{ textAlign: 'center', color: 'black' }}>
                 <FilterHdrIcon /> <b>See More Good Stuff</b>
               </p>
@@ -212,15 +322,153 @@ const Stash = () => {
         </div>
       </div>
       <hr />
-      <p className='stashhomelabel'>
-        <b>MORE FROM THE STASH</b>
-      </p>
+      <form onSubmit={formik.handleSubmit}>
+        <div className='stashhomelabel row'>
+          <div className='col-6'>
+            <p>
+              <b>MORE FROM THE STASH</b>
+            </p>
+          </div>
+          {/* <div className='col-2'>
+            <p>
+              <b>Filter Results:</b>
+            </p>
+          </div> */}
+          {/* <div className='col-2'>
+            <FormControl>
+              <h5>Sort By</h5>
+              <Select
+                name='sortby'
+                {...formik.getFieldProps('sortby')}
+                error={
+                  formik.errors.sortby && formik.touched.sortby ? true : false
+                }>
+                <MenuItem value='mostrecent'>Most Recent</MenuItem>
+                <MenuItem value='popular'>Popular This Week</MenuItem>
+                <MenuItem value='views'>Most Views</MenuItem>
+              </Select>
+            </FormControl>
+          </div> */}
+
+          <div className='col-3'>
+            <FormControl>
+              <h5>Filter By</h5>
+              <Select
+                name='filterby'
+                {...formik.getFieldProps('filterby')}
+                error={
+                  formik.errors.filterby && formik.touched.filterby
+                    ? true
+                    : false
+                }>
+                <MenuItem value='AllCats'>All Categories</MenuItem>
+                <MenuItem value='Ski'>Ski</MenuItem>
+                <MenuItem value='Snowboard'>Snowboard</MenuItem>
+                <MenuItem value='Bike'>Bike</MenuItem>
+                <MenuItem value='Surf'>Surf</MenuItem>
+                <MenuItem value='Adventure'>Adventure</MenuItem>
+                <MenuItem value='Gear'>Gear Buy/Sell</MenuItem>
+                <MenuItem value='Culture'>Culture</MenuItem>
+                <MenuItem value='News'>News</MenuItem>
+                <MenuItem value='MoreSports'>More Sports</MenuItem>
+                <MenuItem value='Films'>Films</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+          <div className='col-3'>
+            <Button variant='contained' color='primary' type='submit'>
+              Apply
+            </Button>
+          </div>
+        </div>
+      </form>
+
       <hr />
       <div className='articleloaderformat row'>
-        {articles && articles.articles
+        {articles && articles.articles && allCats
           ? articles.articles.map((item) => (
               <div className='col-4'>
-                <ArticleCard article={item} />
+                <ArticleCard article={item} cat={'allcats'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && ski
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'ski'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && snowboard
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'board'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && bike
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'bike'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && surf
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'surf'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && adventure
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'adventure'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && gear
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'gear'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && culture
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'culture'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && news
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'news'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && moreSports
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'more'} />
+              </div>
+            ))
+          : null}
+
+        {articles && articles.articles && films
+          ? articles.articles.map((item) => (
+              <div className='col-4'>
+                <ArticleCard article={item} cat={'films'} />
               </div>
             ))
           : null}

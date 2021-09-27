@@ -1,8 +1,18 @@
 import { withRouter } from 'react-router-dom';
 import '../../styles/footer.css';
 import { Link as RouterLink } from 'react-router-dom';
+import { emailSignup } from '../../store/actions/users_actions';
+import { useDispatch } from 'react-redux';
 
 const Footer = () => {
+  const dispatch = useDispatch();
+
+  const handleSignUp = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    dispatch(emailSignup(email));
+  };
+
   return (
     <>
       <div className='footerwrapper'>
@@ -47,7 +57,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className='col-3'>
-            <form>
+            <form onSubmit={handleSignUp}>
               <label>Get TGR Email Updates</label>
               <br />
               <input

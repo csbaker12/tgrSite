@@ -13,7 +13,9 @@ const News = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/wildfireupdate/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='news1'>
                   <div className='newstext'>
                     <p>
@@ -23,7 +25,9 @@ const News = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/curbingfires/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='news2'>
                   <div className='newstext'>
                     <p>
@@ -42,8 +46,14 @@ const News = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

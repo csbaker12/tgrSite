@@ -13,7 +13,9 @@ const Gear = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/howmuchistoomuch/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='gear1'>
                   <div className='geartext'>
                     <p>
@@ -23,7 +25,9 @@ const Gear = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/bozeflyworksreview/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='gear2'>
                   <div className='geartext'>
                     <p>
@@ -40,8 +44,14 @@ const Gear = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

@@ -107,3 +107,19 @@ export const updateArticle = (article, id) => {
     }
   };
 };
+
+export const getSearchResults = (page = 1, limit = 5, keywords = '') => {
+  return async (dispatch) => {
+    try {
+      const request = await axios.post(`/articles/search`, {
+        keywords,
+        page,
+        limit,
+      });
+      dispatch(articles.articleSearch(request.data));
+      console.log(request.data);
+    } catch (error) {
+      dispatch(articles.errorGlobal(error.response.data.message));
+    }
+  };
+};

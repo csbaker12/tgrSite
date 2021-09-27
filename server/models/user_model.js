@@ -52,6 +52,10 @@ const userSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  verified: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 userSchema.pre('save', async function (next) {
@@ -64,14 +68,28 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
+userSchema.methods.generateRegisterToken = function () {
+  let user = this;
+  const userObj = {
+    _id: user._id.toHexString(),
+  };
+  const token = jwt.sign(userObj, process.env.DB_SECRET, { expiresIn: '100d' });
+  return token;
+};
+
 userSchema.methods.generateToken = function () {
   let user = this;
   const userObj = {
     _id: user._id.toHexString(),
     email: user.email,
   };
-  const token = jwt.sign(userObj, process.env.DB_SECRET, { expiresIn: '1d' });
+  const token = jwt.sign(userObj, process.env.DB_SECRET, { expiresIn: '10d' });
   return token;
+};
+
+userSchema.statics.validateToken = function (token) {
+  const verify = jwt.verify(token, process.env.DB_SECRET);
+  return verify;
 };
 
 userSchema.methods.comparePassword = async function (candidatePassword) {

@@ -32,8 +32,14 @@ const Culture = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

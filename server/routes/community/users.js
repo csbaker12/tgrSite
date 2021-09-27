@@ -3,6 +3,7 @@ let router = express.Router();
 require('dotenv').config();
 const { checkLoggedIn } = require('../../middleware/auth');
 const { grantAccess } = require('../../middleware/roles');
+const { registerEmail, emailUpdates } = require('../../config/email');
 
 const { User } = require('../../models/user_model');
 
@@ -30,6 +31,8 @@ router.route('/register').post(async (req, res) => {
     const doc = await user.save();
 
     // 4 send email
+    const emailToken = user.generateRegisterToken();
+    await registerEmail(doc.email, emailToken);
 
     // save...send token with cookie
     res.cookie('x-access-token', token).status(200).send(getUserProps(doc));
@@ -37,6 +40,15 @@ router.route('/register').post(async (req, res) => {
     res.status(400).json({ message: 'Error', error: error });
   }
 });
+
+// router.route('/updatesignup').post(async (req, res) => {
+//   try {
+//     console.log(req.body.email);
+//     await emailUpdates(req.body.email);
+//   } catch (error) {
+//     res.status(400).json({ message: 'Error', error: error });
+//   }
+// });
 
 router.route('/signin').post(async (req, res) => {
   try {
@@ -158,6 +170,23 @@ router.route('/isauth').get(checkLoggedIn, async (req, res) => {
   res.status(200).send(getUserProps(req.user));
 });
 
+router.route('/verify').get(async (req, res) => {
+  try {
+    const token = User.validateToken(req.query.validation);
+    const user = await User.findById(token._id);
+    if (!user) return res.status(400).json({ message: 'User not found' });
+    if (user.verified)
+      return res.status(400).json({ message: 'Already verified' });
+
+    user.verified = true;
+
+    await user.save();
+    res.status(200).send(getUserProps(user));
+  } catch (error) {
+    res.status(400).send(error);
+  }
+});
+
 const getUserProps = (user) => {
   return {
     _id: user._id,
@@ -167,6 +196,7 @@ const getUserProps = (user) => {
     lastname: user.lastname,
     role: user.role,
     location: user.location,
+    verified: user.verified,
   };
 };
 

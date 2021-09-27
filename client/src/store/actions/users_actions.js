@@ -120,3 +120,32 @@ export const signOut = () => {
     dispatch(users.signOut());
   };
 };
+
+export const accountVerify = (token) => {
+  return async (dispatch, getState) => {
+    try {
+      const user = getState().users.auth;
+      await axios.get(`/community/users/verify?validation=${token}`);
+
+      if (user) {
+        dispatch(users.accountVerify());
+      }
+      dispatch(users.successGlobal('Account Verified!'));
+    } catch (error) {
+      dispatch(users.errorGlobal(error.response.data.message));
+    }
+  };
+};
+
+export const emailSignup = (email) => {
+  return async (dispatch) => {
+    try {
+      console.log(email);
+      // const request = await axios.get(`/community/users/updatesignup`, email);
+      // dispatch(users.emailSignup(request.data));
+      dispatch(users.successGlobal(`Registered ${email} for updates!`));
+    } catch (error) {
+      dispatch(users.errorGlobal('Failed to register'));
+    }
+  };
+};

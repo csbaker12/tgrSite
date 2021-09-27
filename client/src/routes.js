@@ -39,6 +39,27 @@ import EditArticle from './components/article/edit';
 import AddThread from './components/thread/add';
 import Thread from './components/thread';
 import Profile from './components/profile';
+import AccountVerify from './components/auth/verification';
+import ArticleLanding from './components/articlelanding';
+import SearchResults from './components/searchresults';
+import FamousWater from './components/artshard/famouswater';
+import WhereAreCaves from './components/artshard/wherearecaves';
+import SummerViews from './components/artshard/summerviews';
+import HowMuchIsTooMuch from './components/artshard/howmuchistoomuch';
+import BozeFlyWorksReview from './components/artshard/bozeflyworksreview';
+import WildfireUpdate from './components/artshard/wildfireupdate';
+import CurbingFires from './components/artshard/curbingfires';
+import DangersOfFriendship from './components/artshard/dangersoffriendship';
+import WinterAsABum from './components/artshard/winterasabum';
+import ChasingWhiteroom from './components/artshard/chasingwhiteroom';
+import SplitBoardingCO from './components/artshard/splitboardingco';
+import SpringSnowboarding from './components/artshard/springsnowboarding';
+import ExploringTrestle from './components/artshard/exploringtrestle';
+import BikingColorado from './components/artshard/bikingcolorado';
+import SurfingOregon from './components/artshard/surfingoregon';
+import ExploringSlotCanyons from './components/artshard/exploringslotcanyons';
+import LearningToClimb from './components/artshard/learntoclimb';
+import FlyFishingMT from './components/artshard/flyfishingmt';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -78,6 +99,68 @@ const Routes = (props) => {
 
         <Switch>
           {/* <Route path='/connect' component={Connect} /> */}
+          {/* hard arts */}
+          <Route path='/article/famouswater/hard' component={FamousWater} />
+          <Route path='/article/wherearecaves/hard' component={WhereAreCaves} />
+          <Route path='/article/summerviews/hard' component={SummerViews} />
+          <Route path='/article/curbingfires/hard' component={CurbingFires} />
+          <Route path='/article/surfingoregon/hard' component={SurfingOregon} />
+          <Route path='/article/flyfishingmt/hard' component={FlyFishingMT} />
+
+          <Route
+            path='/article/learningtoboulder/hard'
+            component={LearningToClimb}
+          />
+
+          <Route
+            path='/article/exploringslotcanyons/hard'
+            component={ExploringSlotCanyons}
+          />
+
+          <Route
+            path='/article/bikingcolorado/hard'
+            component={BikingColorado}
+          />
+          <Route
+            path='/article/exploringtrestle/hard'
+            component={ExploringTrestle}
+          />
+
+          <Route
+            path='/article/springsnow/hard'
+            component={SpringSnowboarding}
+          />
+
+          <Route
+            path='/article/splitboardingco/hard'
+            component={SplitBoardingCO}
+          />
+          <Route path='/article/winterasabum/hard' component={WinterAsABum} />
+          <Route
+            path='/article/chasingwhiteroom/hard'
+            component={ChasingWhiteroom}
+          />
+
+          <Route
+            path='/article/dangersoffriendship/hard'
+            component={DangersOfFriendship}
+          />
+
+          <Route
+            path='/article/howmuchistoomuch/hard'
+            component={HowMuchIsTooMuch}
+          />
+          <Route
+            path='/article/bozeflyworksreview/hard'
+            component={BozeFlyWorksReview}
+          />
+          <Route
+            path='/article/wildfireupdate/hard'
+            component={WildfireUpdate}
+          />
+
+          {/*regular routes */}
+          <Route path='/verification' component={AccountVerify} />
           <Route path='/profile' component={Profile} />
           <Route path='/thread/new' component={AddThread} />
           <Route path='/thread/:id' component={Thread} />
@@ -111,6 +194,8 @@ const Routes = (props) => {
           <Route path='/contributors' component={Contributors} />
           <Route path='/contact' component={Contact} />
           <Route path='/faq' component={FAQ} />
+          <Route path='/article' component={ArticleLanding} />
+          <Route path='/searchresults' component={SearchResults} />
 
           <Route path='/' component={Home} />
         </Switch>

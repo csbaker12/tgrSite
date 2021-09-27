@@ -21,6 +21,9 @@ import {
   UPDATE_EMAIL,
   UPDATE_PROFILE,
   UPDATE_USERNAME,
+  ACCOUNT_VERIFY,
+  EMAIL_SIGNUP,
+  ARTICLE_SEARCH,
 } from '../types';
 
 ///////articles actions
@@ -49,6 +52,11 @@ export const getPaginateArticles = (articles) => ({
   payload: articles,
 });
 
+export const articleSearch = (articles) => ({
+  type: ARTICLE_SEARCH,
+  payload: articles,
+});
+
 /////notifications actions
 export const errorGlobal = (msg) => ({
   type: ERROR_GLOBAL,
@@ -72,7 +80,7 @@ export const removeArticle = () => ({
   type: REMOVE_ARTICLE,
 });
 
-///////auth actions
+///////user actions
 export const authUser = (user) => ({
   type: AUTH_USER,
   payload: user,
@@ -100,6 +108,15 @@ export const updateUsername = (username) => ({
 export const updateProfile = (profile) => ({
   type: UPDATE_PROFILE,
   payload: profile,
+});
+
+export const accountVerify = () => ({
+  type: ACCOUNT_VERIFY,
+});
+
+export const emailSignup = (email) => ({
+  type: EMAIL_SIGNUP,
+  payload: email,
 });
 
 ///thread actions

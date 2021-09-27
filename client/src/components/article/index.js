@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticle } from '../../store/actions/article_actions';
 import { clearArticle } from '../../store/actions';
+import Moment from 'react-moment';
+import createTypography from '@material-ui/core/styles/createTypography';
 
 const Article = (props) => {
   const [loading, setLoading] = useState(true);
@@ -28,17 +30,29 @@ const Article = (props) => {
           <p>Loading</p>
         </>
       ) : (
-        <div className='articlebg'>
-          <div className='articletext'>
+        <>
+          <div className='articlewrap'>
             {current ? (
               <>
-                <p>{current.author}</p>
+                <div className=' articletitlewrap'>
+                  <div>
+                    <p className='articletitle'>{current.title}</p>
+                    <p className='articlesubtitle'>
+                      By: <i>{current.author}</i>
+                      {/* Posted:{' '}
+                      <i>
+                        <Moment to={current.date}></Moment>
+                      </i> */}
+                    </p>
+                  </div>
+                </div>
+
                 <div
                   dangerouslySetInnerHTML={{ __html: current.content }}></div>
               </>
             ) : null}
           </div>
-        </div>
+        </>
       )}
     </>
   );

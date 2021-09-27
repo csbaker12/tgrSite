@@ -8,7 +8,7 @@ const Films = () => {
       <div className='filmswrapper'>
         <h1>Teton Gravity Research Films</h1>
         <hr />
-        <div className='row'>
+        {/* <div className='row'>
           <div className='col-2'>
             <FormControl className='formformat'>
               <InputLabel>SORT BY</InputLabel>
@@ -33,8 +33,8 @@ const Films = () => {
           <div className='col-8'>
             <h6>NOTE: FILTERS WILL BE CONNECTED LATER</h6>
           </div>
-        </div>
-        <hr />
+        </div> */}
+        {/* <hr /> */}
         <div className='row'>
           <div className='col-4'>
             <RouterLink to='/filmdetails' className='filmrouterlink'>

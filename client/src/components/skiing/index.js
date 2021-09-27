@@ -13,7 +13,9 @@ const Skiing = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/dangersoffriendship/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='skiing1'>
                   <div className='skiingtext'>
                     <p>
@@ -25,7 +27,9 @@ const Skiing = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/winterasabum/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='skiing2'>
                   <div className='skiingtext'>
                     <p>
@@ -35,7 +39,9 @@ const Skiing = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/chasingwhiteroom/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='skiing3'>
                   <div className='skiingtext'>
                     <p>
@@ -52,8 +58,14 @@ const Skiing = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

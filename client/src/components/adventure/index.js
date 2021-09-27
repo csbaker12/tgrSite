@@ -13,7 +13,9 @@ const Adventure = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/famouswater/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='adventure1'>
                   <div className='adventuretext'>
                     <p>
@@ -25,7 +27,9 @@ const Adventure = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/wherearecaves/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='adventure2'>
                   <div className='adventuretext'>
                     <p>
@@ -37,7 +41,9 @@ const Adventure = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/summerviews/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='adventure3'>
                   <div className='adventuretext'>
                     <p>
@@ -54,8 +60,14 @@ const Adventure = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

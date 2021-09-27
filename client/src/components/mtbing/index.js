@@ -13,7 +13,9 @@ const MTBing = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/exploringtrestle/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='biking1'>
                   <div className='bikingtext'>
                     <p>
@@ -23,7 +25,9 @@ const MTBing = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/bikingcolorado/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='biking2'>
                   <div className='bikingtext'>
                     <p>
@@ -40,8 +44,14 @@ const MTBing = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

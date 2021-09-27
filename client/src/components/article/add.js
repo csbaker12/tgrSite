@@ -3,7 +3,15 @@ import '../../styles/addarticle.css';
 import { useFormik, FieldArray, FormikProvider } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { validation, formValues } from './validationSchema';
-import { TextField, Button, Divider, FormHelperText } from '@material-ui/core';
+import {
+  TextField,
+  Button,
+  Divider,
+  FormHelperText,
+  MenuItem,
+  FormControl,
+  Select,
+} from '@material-ui/core';
 import { addArticle } from '../../store/actions/article_actions';
 import AddIcon from '@material-ui/icons/Add';
 import WYSIWYG from '../utils/forms/wysiwyg';
@@ -88,6 +96,28 @@ const AddArticle = (props) => {
             {...errorHelper(formik, 'author')}
           />
         </div>
+        <br />
+        <FormControl>
+          <h5>Select a Category</h5>
+          <Select
+            name='category'
+            {...formik.getFieldProps('category')}
+            error={
+              formik.errors.category && formik.touched.category ? true : false
+            }>
+            <MenuItem value='ski'>Ski</MenuItem>
+            <MenuItem value='board'>Snowboard</MenuItem>
+            <MenuItem value='bike'>Bike</MenuItem>
+            <MenuItem value='surf'>Surf</MenuItem>
+            <MenuItem value='adventure'>Adventure</MenuItem>
+            <MenuItem value='gear'>Gear Buy/Sell</MenuItem>
+            <MenuItem value='culture'>Culture</MenuItem>
+            <MenuItem value='news'>News</MenuItem>
+            <MenuItem value='more'>More Sports</MenuItem>
+            <MenuItem value='films'>Films</MenuItem>
+          </Select>
+        </FormControl>
+        <br />
 
         <Divider className='mt-3 mb-3' />
         <Button variant='contained' color='primary' type='submit'>

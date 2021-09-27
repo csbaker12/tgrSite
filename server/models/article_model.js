@@ -20,7 +20,7 @@ const articleSchema = mongoose.Schema({
   },
   category: {
     type: String,
-    // required: [true, 'Category required'],
+    required: [true, 'Category required'],
   },
   date: {
     type: Date,

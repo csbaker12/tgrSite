@@ -13,7 +13,9 @@ const Snowboarding = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/splitboardingco/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='snowboarding1'>
                   <div className='snowboardingtext'>
                     <p>
@@ -25,7 +27,9 @@ const Snowboarding = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/springsnow/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='snowboarding2'>
                   <div className='snowboardingtext'>
                     <p>
@@ -44,8 +48,14 @@ const Snowboarding = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>

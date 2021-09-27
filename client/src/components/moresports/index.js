@@ -13,7 +13,9 @@ const MoreSports = () => {
         <div className='row'>
           <div className='align'>
             <div className='col-8'>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/exploringslotcanyons/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='moresports1'>
                   <div className='moresportstext'>
                     <p>
@@ -25,22 +27,28 @@ const MoreSports = () => {
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/learningtoboulder/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='moresports2'>
                   <div className='moresportstext'>
                     <p>
-                      <span className='moresportstitle'>Learning to Climb</span>
+                      <span className='moresportstitle'>
+                        Learning to Boulder
+                      </span>
                       <br /> bigmig | Adventure | 110.2k
                     </p>
                   </div>
                 </div>
               </RouterLink>
-              <RouterLink to='/article' style={{ textDecoration: 'none' }}>
+              <RouterLink
+                to='/article/flyfishingmt/hard'
+                style={{ textDecoration: 'none' }}>
                 <div className='moresports3'>
                   <div className='moresportstext'>
                     <p>
                       <span className='moresportstitle'>
-                        Fly Fishing the Madison
+                        Fly Fishing Montana
                       </span>
                       <br /> nurt | Adventure | 44.3k
                     </p>
@@ -54,8 +62,14 @@ const MoreSports = () => {
                   <b>THE STASH</b>
                 </p>
                 <p>
-                  UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
-                  <DescriptionIcon />
+                  <RouterLink
+                    to='/thread/new'
+                    style={{ textDecoration: 'none', color: 'black' }}>
+                    <p>
+                      UPLOAD YOUR OWN: <VideocamIcon /> <CameraAltIcon />{' '}
+                      <DescriptionIcon />
+                    </p>
+                  </RouterLink>
                 </p>
                 <p>
                   <b>POPULAR THIS WEEK ON TGR:</b>
